@@ -3,752 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Found in PT — Coming Soon</title>
-  <style>
-    :root {
-      --bg: #f6f1e8;
-      --surface: rgba(255, 252, 247, 0.92);
-      --surface-strong: #fffaf3;
-      --text: #2f2a24;
-      --muted: #6e6256;
-      --border: rgba(65, 52, 40, 0.14);
-      --accent: #7b5c3e;
-      --accent-dark: #62472e;
-      --shadow: 0 24px 60px rgba(52, 39, 28, 0.12);
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(175, 135, 90, 0.18), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(126, 160, 136, 0.15), transparent 24%),
-        var(--bg);
-      line-height: 1.5;
-    }
-
-    img { max-width: 100%; display: block; }
-
-    a { color: inherit; }
-
-    .page {
-      min-height: 100vh;
-      padding: 32px 20px 56px;
-    }
-
-    .shell {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(123, 92, 62, 0.12);
-      border: 1px solid rgba(123, 92, 62, 0.18);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-    }
-
-    .brand-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .brand-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
-      letter-spacing: 0.02em;
-    }
-
-    .brand-tag {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .status-pill {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.55);
-      color: var(--muted);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .content-panel {
-      padding: 44px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 680px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(123, 92, 62, 0.16);
-      background: rgba(123, 92, 62, 0.07);
-      color: var(--accent-dark);
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 5vw, 4.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-    }
-
-    .lede {
-      margin: 0;
-      max-width: 58ch;
-      font-size: 1.08rem;
-      color: var(--muted);
-    }
-
-    .points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .point {
-      padding: 16px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(65, 52, 40, 0.08);
-      background: rgba(255, 255, 255, 0.46);
-    }
-
-    .point-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .point-copy {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .trust span {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.5);
-      border: 1px solid rgba(65, 52, 40, 0.08);
-    }
-
-    .preview {
-      margin-top: 34px;
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.28));
-      border: 1px solid rgba(65, 52, 40, 0.08);
-    }
-
-    .preview-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .preview-card {
-      border-radius: 18px;
-      background: var(--surface-strong);
-      border: 1px solid rgba(65, 52, 40, 0.08);
-      padding: 16px;
-      min-height: 118px;
-    }
-
-    .preview-category {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .preview-name {
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .preview-desc {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .form-panel {
-      padding: 28px;
-      align-self: stretch;
-    }
-
-    .card-head {
-      margin-bottom: 22px;
-    }
-
-    .card-title {
-      margin: 0 0 8px;
-      font-size: 1.55rem;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    .card-copy {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .segmented {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 18px 0 22px;
-    }
-
-    .segment-btn {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.6);
-      padding: 14px 14px;
-      border-radius: 14px;
-      font: inherit;
-      color: var(--text);
-      text-align: left;
-      cursor: pointer;
-      transition: 180ms ease;
-    }
-
-    .segment-btn strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    .segment-btn span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.35;
-    }
-
-    .segment-btn.active {
-      background: rgba(123, 92, 62, 0.1);
-      border-color: rgba(123, 92, 62, 0.32);
-      box-shadow: inset 0 0 0 1px rgba(123, 92, 62, 0.08);
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    label {
-      font-size: 0.94rem;
-      font-weight: 600;
-    }
-
-    .hint {
-      font-size: 0.83rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-left: 4px;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid rgba(65, 52, 40, 0.14);
-      background: rgba(255,255,255,0.86);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 14px 15px;
-      font: inherit;
-      outline: none;
-      transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: rgba(123, 92, 62, 0.46);
-      box-shadow: 0 0 0 4px rgba(123, 92, 62, 0.08);
-      background: #fff;
-    }
-
-    textarea {
-      min-height: 104px;
-      resize: vertical;
-    }
-
-    .checkbox-row {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding-top: 4px;
-    }
-
-    .checkbox-row input {
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      padding: 0;
-      border-radius: 6px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      padding-top: 6px;
-    }
-
-    .button {
-      appearance: none;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 18px;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 150ms ease, opacity 150ms ease, background 150ms ease;
-    }
-
-    .button:hover { transform: translateY(-1px); }
-    .button:active { transform: translateY(0); }
-
-    .button-primary {
-      background: var(--accent);
-      color: #fffdf9;
-      min-width: 170px;
-    }
-
-    .button-secondary {
-      background: rgba(255,255,255,0.7);
-      color: var(--text);
-      border: 1px solid rgba(65, 52, 40, 0.1);
-    }
-
-    .meta-note {
-      margin-top: 16px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .success {
-      display: none;
-      padding: 18px;
-      margin-top: 12px;
-      border-radius: 18px;
-      background: rgba(107, 153, 120, 0.12);
-      border: 1px solid rgba(107, 153, 120, 0.22);
-    }
-
-    .success strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-
-    .footer-note {
-      margin-top: 22px;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .content-panel {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .page {
-        padding: 18px 14px 34px;
-      }
-
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 18px;
-      }
-
-      .content-panel,
-      .form-panel {
-        padding: 22px;
-      }
-
-      .points,
-      .preview-grid,
-      .segmented {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
+  <title>Found in PT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <div class="shell">
-      <div class="topbar">
-        <a class="brand" href="#">
-          <div class="brand-mark">PT</div>
-          <div class="brand-copy">
-            <div class="brand-name">Found in PT</div>
-            <div class="brand-tag">Port Townsend artists & makers</div>
+
+  <header>
+    <a href="#" class="logo-text">found in pt</a>
+  </header>
+
+  <section class="hero">
+    <h1><span class="brand-coral">found in pt</span> is a place for all the artists, makers, and crafters of Port Townsend.</h1>
+  </section>
+
+  <section class="signup">
+
+    <div class="signup-path card-yellow">
+      <p class="path-label">For visitors &amp; locals</p>
+      <h2 class="path-title">Follow the launch</h2>
+      <p class="path-desc">Get occasional updates as the site grows and new creators are added.</p>
+
+      <div id="mlb2-40128546" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40128546">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email address" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+              <div class="ml-form-checkboxRow ml-validate-required">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <div class="label-description"><p>I'd like occasional updates about Found in PT.</p></div>
+                </label>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Get updates</button>
+                <button disabled="disabled" style="display:none" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
           </div>
-        </a>
-        <div class="status-pill">Coming soon • Built locally in Port Townsend</div>
+          <div class="ml-form-successBody row-success" style="display:none">
+            <div class="ml-form-successContent">
+              <h4>You're on the list.</h4>
+              <p>We'll be in touch as the site launches.</p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <main class="hero">
-        <section class="panel content-panel">
-          <div>
-            <div class="eyebrow">Curated local guide</div>
-            <h1>A new home for Port Townsend artists and makers.</h1>
-            <p class="lede">
-              Found in PT is a curated guide to the artists, makers, and creative businesses that make this town special.
-              Join early for launch updates, or raise your hand to be included as a creator.
-            </p>
-
-            <div class="points">
-              <div class="point">
-                <div class="point-title">For locals + visitors</div>
-                <div class="point-copy">Discover great local work, follow the launch, and hear when new creators are added.</div>
-              </div>
-              <div class="point">
-                <div class="point-title">For artists + makers</div>
-                <div class="point-copy">Share a few details now and be considered for inclusion as the site grows.</div>
-              </div>
-              <div class="point">
-                <div class="point-title">Simple from day one</div>
-                <div class="point-copy">Only the essentials for now — enough to build the first version without adding friction.</div>
-              </div>
-              <div class="point">
-                <div class="point-title">Curated, not chaotic</div>
-                <div class="point-copy">A thoughtful local guide, not just another open directory full of stale listings.</div>
-              </div>
-            </div>
-
-            <div class="trust">
-              <span>Built locally in Port Townsend</span>
-              <span>Curated for quality</span>
-              <span>Early supporters welcome</span>
-            </div>
-          </div>
-
-          <div class="preview">
-            <div class="preview-label">The kind of creators this could feature</div>
-            <div class="preview-grid">
-              <div class="preview-card">
-                <div class="preview-category">Ceramics</div>
-                <div class="preview-name">Studio Potter</div>
-                <div class="preview-desc">Functional wares, sculptural pieces, and small-batch local work.</div>
-              </div>
-              <div class="preview-card">
-                <div class="preview-category">Jewelry</div>
-                <div class="preview-name">Independent Maker</div>
-                <div class="preview-desc">Handmade pieces, market appearances, and links to existing shops.</div>
-              </div>
-              <div class="preview-card">
-                <div class="preview-category">Painting & Print</div>
-                <div class="preview-name">Local Artist</div>
-                <div class="preview-desc">A simple web presence for discovery, search, and future local guides.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <aside class="panel form-panel">
-          <div class="card-head">
-            <h2 class="card-title">Join early access</h2>
-            <p class="card-copy">
-              Choose the path that fits. Supporters can sign up in seconds. Creators can share a few more details.
-            </p>
-          </div>
-
-          <div class="segmented" role="tablist" aria-label="Choose signup type">
-            <button class="segment-btn active" type="button" data-mode="supporter" aria-pressed="true">
-              <strong>Get updates</strong>
-              <span>For locals, visitors, and anyone who wants to follow the launch.</span>
-            </button>
-            <button class="segment-btn" type="button" data-mode="creator" aria-pressed="false">
-              <strong>Apply as a maker</strong>
-              <span>For artists, makers, and creative businesses who want to be featured.</span>
-            </button>
-          </div>
-
-          <form id="signupForm" action="#" method="post" novalidate>
-            <input type="hidden" name="signup_type" id="signupType" value="supporter" />
-
-            <div class="field">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
-            </div>
-
-            <div class="creator-fields hidden" aria-hidden="true">
-              <div class="field">
-                <label for="name">Your name</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name or studio name" />
-              </div>
-
-              <div class="field">
-                <label for="makerType">What do you make?</label>
-                <input id="makerType" name="maker_type" type="text" placeholder="Ceramics, jewelry, painting, textiles…" />
-              </div>
-
-              <div class="field">
-                <label for="socials">Website / Instagram / Etsy <span class="hint">optional but helpful</span></label>
-                <input id="socials" name="socials" type="text" placeholder="Website or social link" />
-              </div>
-
-              <div class="field">
-                <label for="location">Based in</label>
-                <select id="location" name="location">
-                  <option value="">Select one</option>
-                  <option>Port Townsend</option>
-                  <option>Jefferson County</option>
-                  <option>Nearby / I sell in PT</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="notes">Anything else we should know? <span class="hint">optional</span></label>
-                <textarea id="notes" name="notes" placeholder="A short note about your work, where people can find it, or anything helpful."></textarea>
-              </div>
-            </div>
-
-            <label class="checkbox-row">
-              <input id="consent" name="consent" type="checkbox" checked required />
-              <span>I’d like occasional updates about Found in PT.</span>
-            </label>
-
-            <div class="actions">
-              <button class="button button-primary" type="submit">Join Early Access</button>
-              <button class="button button-secondary hidden" id="resetToSupporter" type="button">Switch to updates only</button>
-            </div>
-
-            <div class="success" id="successMessage" aria-live="polite">
-              <strong>Thanks for joining Found in PT.</strong>
-              <span>We’ll share updates as the site launches and local creators are added.</span>
-            </div>
-          </form>
-
-          <div class="footer-note">
-            Tip: in MailerLite, map supporter and creator submissions into separate groups so you can email them differently later.
-          </div>
-        </aside>
-      </main>
     </div>
-  </div>
+
+    <div class="signup-path card-mint">
+      <p class="path-label">For artists &amp; makers</p>
+      <h2 class="path-title">Apply to be featured</h2>
+      <p class="path-desc">Share a few details and we'll consider you for inclusion as the directory grows.</p>
+
+      <div id="mlb2-40128654" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40128654">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-name">
+                    <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="Name or studio name" autocomplete="given-name">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email address" autocomplete="email">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-maker_type ml-validate-required">
+                    <input aria-label="maker_type" aria-required="true" type="text" class="form-control" name="fields[maker_type]" placeholder="What do you make?">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-socials">
+                    <input aria-label="socials" type="text" class="form-control" name="fields[socials]" placeholder="Website or Instagram (optional)">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-location ml-validate-required">
+                    <input aria-label="location" aria-required="true" type="text" class="form-control" name="fields[location]" placeholder="Based in">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-notes">
+                    <input aria-label="notes" type="text" class="form-control" name="fields[notes]" placeholder="Anything else (optional)">
+                  </div>
+                </div>
+              </div>
+              <div class="ml-form-checkboxRow ml-validate-required">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <div class="label-description"><p>I'd like occasional updates about Found in PT.</p></div>
+                </label>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Apply as a maker</button>
+                <button disabled="disabled" style="display:none" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none">
+            <div class="ml-form-successContent">
+              <h4>Application received.</h4>
+              <p>We'll be in touch as we add creators to Found in PT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="benefits">
+
+    <div class="benefits-col">
+      <p class="benefits-label">For visitors &amp; locals</p>
+      <ul class="benefits-list">
+        <li>Find artists and makers who actually live and work here</li>
+        <li>Discover studios, markets, and open days in one place</li>
+        <li>Buy directly from the people who made it</li>
+        <li>Support a creative community that shapes this town</li>
+      </ul>
+    </div>
+
+    <div class="benefits-col">
+      <p class="benefits-label">For artists &amp; makers</p>
+      <ul class="benefits-list">
+        <li>Get found by visitors looking to buy local, original work</li>
+        <li>A permanent home for your practice beyond social media</li>
+        <li>Part of a curated directory, not an algorithm</li>
+        <li>Free to be listed while the community grows</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer>
+    <span>Found in PT &mdash; Port Townsend, WA</span>
+  </footer>
 
   <script>
-    const buttons = document.querySelectorAll('.segment-btn');
-    const signupType = document.getElementById('signupType');
-    const creatorFields = document.querySelector('.creator-fields');
-    const resetButton = document.getElementById('resetToSupporter');
-    const form = document.getElementById('signupForm');
-    const successMessage = document.getElementById('successMessage');
-    const creatorInputs = creatorFields.querySelectorAll('input, select, textarea');
-
-    function setMode(mode) {
-      const isCreator = mode === 'creator';
-      signupType.value = mode;
-
-      buttons.forEach((button) => {
-        const active = button.dataset.mode === mode;
-        button.classList.toggle('active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-
-      creatorFields.classList.toggle('hidden', !isCreator);
-      creatorFields.setAttribute('aria-hidden', isCreator ? 'false' : 'true');
-      resetButton.classList.toggle('hidden', !isCreator);
-
-      creatorInputs.forEach((input) => {
-        if (input.id === 'name' || input.id === 'makerType' || input.id === 'location') {
-          input.required = isCreator;
-        }
-      });
+    function ml_webform_success_40128546() {
+      var el = document.querySelector('.ml-subscribe-form-40128546 .row-success');
+      var frm = document.querySelector('.ml-subscribe-form-40128546 .row-form');
+      if (el) el.style.display = 'block';
+      if (frm) frm.style.display = 'none';
     }
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => setMode(button.dataset.mode));
-    });
-
-    resetButton.addEventListener('click', () => setMode('supporter'));
-
-    function mlSuccess() {
-      const submitBtn = form.querySelector('.button-primary');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Join Early Access';
-      successMessage.style.display = 'block';
-      form.reset();
-      setMode('supporter');
-      document.getElementById('consent').checked = true;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function ml_webform_success_40128654() {
+      var el = document.querySelector('.ml-subscribe-form-40128654 .row-success');
+      var frm = document.querySelector('.ml-subscribe-form-40128654 .row-form');
+      if (el) el.style.display = 'block';
+      if (frm) frm.style.display = 'none';
     }
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const mode = signupType.value;
-      const submitBtn = form.querySelector('.button-primary');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      if (mode === 'supporter') {
-        document.getElementById('ml-s-email').value = document.getElementById('email').value;
-        document.querySelector('#mlb2-40128546 .ml-block-form button.primary').click();
-      } else {
-        document.getElementById('ml-c-name').value    = document.getElementById('name').value;
-        document.getElementById('ml-c-email').value   = document.getElementById('email').value;
-        document.getElementById('ml-c-type').value    = document.getElementById('makerType').value;
-        document.getElementById('ml-c-socials').value = document.getElementById('socials').value;
-        document.getElementById('ml-c-loc').value     = document.getElementById('location').value;
-        document.getElementById('ml-c-notes').value   = document.getElementById('notes').value;
-        document.querySelector('#mlb2-40128654 .ml-block-form button.primary').click();
-      }
-    });
-
-    setMode('supporter');
-  </script>
-
-  <!-- Hidden Mailerlite forms — handled by webforms.min.js -->
-  <div style="display:none" aria-hidden="true">
-
-    <div id="mlb2-40128546" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40128546">
-      <div class="ml-form-embedWrapper embedForm">
-        <div class="ml-form-embedBody row-form">
-          <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/subscribe" data-code="" method="post" target="_blank">
-            <input id="ml-s-email" type="email" name="fields[email]" placeholder="Email">
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" class="primary">Submit</button>
-            <button disabled type="button" class="loading"><span class="sr-only">Loading...</span></button>
-          </form>
-        </div>
-        <div class="ml-form-successBody row-success" style="display:none"></div>
-      </div>
-    </div>
-
-    <div id="mlb2-40128654" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40128654">
-      <div class="ml-form-embedWrapper embedForm">
-        <div class="ml-form-embedBody row-form">
-          <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/subscribe" data-code="" method="post" target="_blank">
-            <input id="ml-c-name"    type="text"  name="fields[name]"       placeholder="Name">
-            <input id="ml-c-email"   type="email" name="fields[email]"      placeholder="Email">
-            <input id="ml-c-type"    type="text"  name="fields[maker_type]" placeholder="What do you make?">
-            <input id="ml-c-socials" type="text"  name="fields[socials]"    placeholder="Socials">
-            <input id="ml-c-loc"     type="text"  name="fields[location]"   placeholder="Location">
-            <input id="ml-c-notes"   type="text"  name="fields[notes]"      placeholder="Notes">
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" class="primary">Submit</button>
-            <button disabled type="button" class="loading"><span class="sr-only">Loading...</span></button>
-          </form>
-        </div>
-        <div class="ml-form-successBody row-success" style="display:none"></div>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    function ml_webform_success_40128546() { mlSuccess(); }
-    function ml_webform_success_40128654() { mlSuccess(); }
   </script>
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
   <script>
     fetch("https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/takel");
     fetch("https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/takel");
   </script>
+
 </body>
 </html>

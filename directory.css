@@ -1,0 +1,106 @@
+/* ── Directory header ── */
+.dir-header {
+  padding: clamp(40px, 6vw, 72px) var(--pad) 24px;
+}
+
+.dir-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 12px;
+}
+
+.dir-count {
+  font-size: 0.95rem;
+  color: var(--mid);
+}
+
+/* ── Filters ── */
+.dir-filters {
+  padding: 0 var(--pad) 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 7px 16px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.filter-btn.active {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+/* ── Grid ── */
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2px;
+  padding: 0 var(--pad) clamp(64px, 10vw, 120px);
+}
+
+.maker-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--white);
+}
+
+.maker-card:hover .maker-thumb {
+  opacity: 0.85;
+}
+
+.maker-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  transition: opacity 150ms ease;
+}
+
+.maker-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.maker-info {
+  padding: 12px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.maker-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.maker-discipline {
+  font-size: 0.875rem;
+  color: var(--mid);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .dir-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+}
