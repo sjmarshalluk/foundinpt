@@ -1,0 +1,17 @@
+{
+  "name": "foundinpt",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Found in PT — directory site for Port Townsend artists, makers, and crafters.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  }
+}

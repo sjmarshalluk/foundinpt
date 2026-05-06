@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Found in PT</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header>
-    <a href="#" class="logo-text">found in pt</a>
-  </header>
+---
+import Site from '../layouts/Site.astro';
+---
+<Site title="Found in PT">
 
   <section class="hero">
     <h1><span class="brand-coral">found in pt</span> is a place for all the artists, makers, and crafters of Port Townsend.</h1>
   </section>
 
+  <section class="about">
+    <div class="about-text">
+      <p class="about-label">About</p>
+      <h2 class="about-heading">A home for the people making things in Port Townsend.</h2>
+      <div class="about-body">
+        <p>Found in PT is a curated directory connecting visitors and locals with the artists, makers, and crafters working in and around town — painters, potters, jewelers, woodworkers, weavers, and more.</p>
+        <p>It's a small project from people who live here, free to be listed in, and built to highlight the creative community that gives Port Townsend its character.</p>
+      </div>
+      <a class="about-cta" href="/artists">Browse the directory <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="about-image" style="background-image:url('/hero-pt.png');"></div>
+  </section>
+
   <section class="signup">
 
-    <div class="signup-path card-yellow">
+    <div class="signup-path">
       <p class="path-label">For visitors &amp; locals</p>
       <h2 class="path-title">Follow the launch</h2>
       <p class="path-desc">Get occasional updates as the site grows and new creators are added.</p>
@@ -64,7 +65,7 @@
       </div>
     </div>
 
-    <div class="signup-path card-mint">
+    <div class="signup-path">
       <p class="path-label">For artists &amp; makers</p>
       <h2 class="path-title">Apply to be featured</h2>
       <p class="path-desc">Share a few details and we'll consider you for inclusion as the directory grows.</p>
@@ -94,14 +95,9 @@
                     <input aria-label="socials" type="text" class="form-control" name="fields[socials]" placeholder="Website or Instagram (optional)">
                   </div>
                 </div>
-                <div class="ml-form-fieldRow">
-                  <div class="ml-field-group ml-field-location ml-validate-required">
-                    <input aria-label="location" aria-required="true" type="text" class="form-control" name="fields[location]" placeholder="Based in">
-                  </div>
-                </div>
                 <div class="ml-form-fieldRow ml-last-item">
                   <div class="ml-field-group ml-field-notes">
-                    <input aria-label="notes" type="text" class="form-control" name="fields[notes]" placeholder="Anything else (optional)">
+                    <input aria-label="notes" type="text" class="form-control" name="fields[notes]" placeholder="Anything else you want to share? (optional)">
                   </div>
                 </div>
               </div>
@@ -135,7 +131,6 @@
   </section>
 
   <section class="benefits">
-
     <div class="benefits-col">
       <p class="benefits-label">For visitors &amp; locals</p>
       <ul class="benefits-list">
@@ -155,14 +150,9 @@
         <li>Free to be listed, forever</li>
       </ul>
     </div>
-
   </section>
 
-  <footer>
-    <span>Found in PT &mdash; Port Townsend, WA</span>
-  </footer>
-
-  <script>
+  <script is:inline>
     function ml_webform_success_40128546() {
       var el = document.querySelector('.ml-subscribe-form-40128546 .row-success');
       var frm = document.querySelector('.ml-subscribe-form-40128546 .row-form');
@@ -176,11 +166,10 @@
       if (frm) frm.style.display = 'none';
     }
   </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-  <script>
+  <script is:inline src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
+  <script is:inline>
     fetch("https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/takel");
     fetch("https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/takel");
   </script>
 
-</body>
-</html>
+</Site>

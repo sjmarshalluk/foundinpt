@@ -1,0 +1,347 @@
+/* ── Directory intro ── */
+.dir-intro {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--black);
+  max-width: 50%;
+  padding: clamp(48px, 7vw, 96px) var(--pad) clamp(40px, 6vw, 72px);
+}
+@media (max-width: 780px) {
+  .dir-intro { max-width: 100%; font-size: 2rem; }
+}
+
+/* ── Directory header ── */
+.dir-header {
+  padding: clamp(40px, 6vw, 72px) var(--pad) 24px;
+}
+
+.dir-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 12px;
+}
+
+.dir-count {
+  font-size: 0.95rem;
+  color: var(--mid);
+}
+
+/* ── Filters ── */
+.dir-filters {
+  padding: 0 var(--pad) 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 7px 16px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.filter-btn.active {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+/* ── Sections ── */
+.space-section { margin-bottom: 32px; }
+
+.section-heading {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 40px var(--pad) 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.empty-note {
+  padding: 16px var(--pad);
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+
+/* ── Grid ── */
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 var(--pad) clamp(64px, 10vw, 120px);
+}
+
+.space-section .dir-grid { padding-bottom: 8px; }
+.space-section:last-of-type .dir-grid { padding-bottom: clamp(64px, 10vw, 120px); }
+
+.maker-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--white);
+}
+
+.maker-card:hover .maker-thumb {
+  opacity: 0.85;
+}
+
+.maker-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  transition: opacity 150ms ease;
+}
+
+.maker-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.maker-info {
+  padding: 12px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.maker-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.maker-discipline {
+  font-size: 0.875rem;
+  color: var(--mid);
+}
+
+/* ── /shop product grid (4 cols, dual-link card) ── */
+.shop-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 var(--pad) clamp(64px, 10vw, 120px);
+}
+
+.space-section .shop-products-grid { padding-bottom: 8px; }
+
+.shop-product-card { display: flex; flex-direction: column; }
+
+.product-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.product-link:hover .product-thumb { opacity: 0.85; }
+
+.product-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  transition: opacity 120ms ease;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.product-price {
+  font-size: 0.85rem;
+  color: var(--mid);
+  white-space: nowrap;
+}
+
+.product-maker {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--mid);
+  margin-top: 2px;
+  text-decoration: none;
+}
+.product-maker:hover { color: var(--coral); }
+
+/* ── /shop email-capture card ── */
+.shop-updates-section {
+  padding: 16px 0 32px;
+}
+.shop-updates-card {
+  margin: 0 var(--pad);
+  background: var(--white);
+  border: 1px solid var(--black);
+  box-shadow: 10px 10px 0 #eee;
+  padding: clamp(28px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.shop-updates-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.shop-updates-desc {
+  font-size: 1rem;
+  color: var(--mid);
+  line-height: 1.5;
+  max-width: 44ch;
+}
+.shop-updates-form {
+  display: flex;
+  gap: 8px;
+}
+.shop-updates-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  background: #f4f4f4;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  color: var(--black);
+}
+.shop-updates-input::placeholder { color: #999; }
+.shop-updates-input:focus { outline: 2px solid var(--black); outline-offset: -2px; }
+.shop-updates-btn {
+  appearance: none;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 120ms ease;
+}
+.shop-updates-btn:hover { opacity: 0.85; }
+.shop-updates-success {
+  font-size: 1rem;
+  color: var(--black);
+  margin: 0;
+}
+@media (max-width: 780px) {
+  .shop-updates-card { grid-template-columns: 1fr; }
+}
+
+/* ── /shop list-style sections (used by both "Shop direct from makers" and
+       "Browse local shops"). The cream-tinted variant adds .online-makers-tint. ── */
+.online-makers-tint {
+  background: #F5EDE0;
+  margin: 32px 0;
+  padding-bottom: 8px;
+}
+
+.maker-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 clamp(24px, 4vw, 56px);
+  padding: 0 var(--pad) clamp(32px, 6vw, 56px);
+}
+
+.maker-list-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+}
+.maker-list-row:hover .maker-list-name { color: var(--coral); }
+.maker-list-row:hover .maker-list-arrow { color: var(--coral); transform: translateX(2px); }
+
+.maker-list-thumb {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+
+.maker-list-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.maker-list-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.maker-list-discipline {
+  font-size: 0.85rem;
+  color: var(--mid);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.maker-list-arrow {
+  color: var(--mid);
+  font-size: 1rem;
+  transition: transform 120ms ease, color 120ms ease;
+}
+
+/* ── /shop local-shops map (Leaflet) ── */
+.local-shops-map {
+  height: 400px;
+  margin: 8px var(--pad) 24px;
+  background: #ece6dc;
+  border-radius: 4px;
+  z-index: 0;
+}
+@media (max-width: 600px) {
+  .local-shops-map { height: 280px; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .dir-grid { grid-template-columns: repeat(3, 1fr); }
+  .shop-products-grid { grid-template-columns: repeat(3, 1fr); }
+  .maker-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .dir-grid { grid-template-columns: repeat(2, 1fr); }
+  .shop-products-grid { grid-template-columns: repeat(2, 1fr); }
+  .maker-list { grid-template-columns: 1fr; }
+}

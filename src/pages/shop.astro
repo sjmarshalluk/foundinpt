@@ -1,0 +1,216 @@
+---
+import Site from '../layouts/Site.astro';
+import {
+  allProducts, entitiesSellingOnline, entitiesSellingInPerson,
+  shortName, primaryTag, hashColor, heroImageSrc,
+} from '../lib/data.js';
+import '../styles/directory.css';
+
+// Hardcoded featured set for now. To make dynamic later: add a `featured: true`
+// flag to individual products in entities.json (or a `featured_product_ids` array
+// at the top level), and replace this filter with a flag-based pick.
+const FEATURED_PRODUCT_TITLES = [
+  'Bee Honeycomb Light Weight Wooden Earrings',
+  'BBQ Turner',
+  'Under the Sea',
+  'Goat Milk Soap',
+];
+const featuredOrder = new Map(FEATURED_PRODUCT_TITLES.map((t, i) => [t, i]));
+
+const products = allProducts()
+  .filter(({ product }) => featuredOrder.has(product.title))
+  .sort((a, b) => featuredOrder.get(a.product.title) - featuredOrder.get(b.product.title));
+
+const onlineMakers = entitiesSellingOnline();
+const inPersonShops = entitiesSellingInPerson();
+
+function locLabel(e) {
+  return [e.neighborhood, e.town].filter(Boolean).join(' · ') || primaryTag(e);
+}
+
+// Map markers — each in-person shop with lat/lng. Built at SSG time and
+// embedded into the inline init script via Astro's `define:vars`.
+const shopMarkers = inPersonShops
+  .filter((e) => Number.isFinite(e.lat) && Number.isFinite(e.lng))
+  .map((e) => ({
+    id: e.id,
+    name: shortName(e),
+    tag: locLabel(e),
+    lat: e.lat,
+    lng: e.lng,
+  }));
+---
+<Site title="Shop — Found in PT">
+  <link slot="head" rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <p class="dir-intro">Original work from local makers — buy online, or find the shops where you can see it in person.</p>
+
+  {products.length > 0 && (
+    <section class="space-section" data-section="products">
+      <h2 class="section-heading">Products</h2>
+      <div class="shop-products-grid">
+        {products.map(({ product, entity }) => {
+          const search = `${product.title || ''} ${entity.businessName || ''} ${entity.personName || ''} ${(entity.skills || []).join(' ')}`.toLowerCase();
+          return (
+            <div class="shop-product-card" data-search={search} data-section="products">
+              <a href={product.product_url} target="_blank" rel="noopener" class="product-link">
+                <div class="product-thumb" style={`background-image:url(${product.image_url});background-size:cover;background-position:center;`} ></div>
+                <div class="product-info">
+                  <span class="product-title">{product.title}</span>
+                  {product.price && <span class="product-price">{product.price}</span>}
+                </div>
+              </a>
+              <a href={`/entity/${entity.id}/`} class="product-maker">{shortName(entity)}</a>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <section class="shop-updates-section">
+    <div class="shop-updates-card">
+      <div class="shop-updates-text">
+        <h3 class="shop-updates-title">Hear about new things to buy from local makers</h3>
+        <p class="shop-updates-desc">Occasional updates as new artists, makers, and products are added to the shop.</p>
+      </div>
+      <div class="shop-updates-form-wrap">
+        <form id="shop-updates-form" class="shop-updates-form"
+              action="https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/subscribe"
+              method="post">
+          <input type="email" name="fields[email]" required placeholder="Email address" autocomplete="email" aria-label="Email" class="shop-updates-input" />
+          <button type="submit" class="shop-updates-btn">Sign up</button>
+          <input type="hidden" name="ml-submit" value="1" />
+          <input type="hidden" name="anticsrf" value="true" />
+        </form>
+        <p id="shop-updates-success" class="shop-updates-success" hidden>Thanks — you're on the list.</p>
+      </div>
+    </div>
+  </section>
+
+  {onlineMakers.length > 0 && (
+    <section class="space-section online-makers-tint" data-section="online">
+      <h2 class="section-heading">Shop direct from makers</h2>
+      <div class="maker-list">
+        {onlineMakers.map((e) => {
+          const hero = heroImageSrc(e);
+          const search = `${e.personName || ''} ${e.businessName || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          return (
+            <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="online">
+              <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>
+              <div class="maker-list-text">
+                <span class="maker-list-name">{shortName(e)}</span>
+                <span class="maker-list-discipline">{primaryTag(e)}</span>
+              </div>
+              <span class="maker-list-arrow" aria-hidden="true">→</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  {inPersonShops.length > 0 && (
+    <section class="space-section" data-section="in-person">
+      <h2 class="section-heading">Browse local shops</h2>
+      <div id="local-shops-map" class="local-shops-map"></div>
+      <div class="maker-list">
+        {inPersonShops.map((e) => {
+          const hero = heroImageSrc(e);
+          const search = `${e.personName || ''} ${e.businessName || ''} ${e.neighborhood || ''} ${e.town || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          return (
+            <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="in-person" data-id={e.id}>
+              <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>
+              <div class="maker-list-text">
+                <span class="maker-list-name">{shortName(e)}</span>
+                <span class="maker-list-discipline">{locLabel(e)}</span>
+              </div>
+              <span class="maker-list-arrow" aria-hidden="true">→</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <script is:inline>
+    (function () {
+      const cards = document.querySelectorAll('[data-search]');
+      const totalCountEl = document.getElementById('visible-count');
+      const searchEl = document.getElementById('dir-search');
+      const sectionCountEls = document.querySelectorAll('[data-section-count]');
+      let query = '';
+
+      function refilter() {
+        const perSection = {};
+        let productTotal = 0;
+        cards.forEach((card) => {
+          const matchQuery = !query || (card.dataset.search || '').includes(query);
+          card.style.display = matchQuery ? '' : 'none';
+          if (matchQuery) {
+            const sec = card.dataset.section;
+            perSection[sec] = (perSection[sec] || 0) + 1;
+            if (sec === 'products') productTotal++;
+          }
+        });
+        // Header total tracks the product count specifically (matches the
+        // initial render's "{products.length} products" framing).
+        if (totalCountEl) totalCountEl.textContent = productTotal;
+        sectionCountEls.forEach((el) => {
+          const sec = el.dataset.sectionCount;
+          el.textContent = perSection[sec] || 0;
+        });
+      }
+
+      if (searchEl) {
+        searchEl.addEventListener('input', () => {
+          query = searchEl.value.trim().toLowerCase();
+          refilter();
+        });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      const form = document.getElementById('shop-updates-form');
+      const success = document.getElementById('shop-updates-success');
+      if (!form || !success) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try { fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' }); } catch (err) {}
+        form.hidden = true;
+        success.hidden = false;
+      });
+    })();
+  </script>
+
+  <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script is:inline define:vars={{ shopMarkers }}>
+    (function () {
+      const el = document.getElementById('local-shops-map');
+      if (!el || !window.L || !shopMarkers.length) return;
+
+      const map = L.map(el, { scrollWheelZoom: false }).setView([48.117, -122.766], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+      }).addTo(map);
+
+      const bounds = [];
+      for (const m of shopMarkers) {
+        const marker = L.marker([m.lat, m.lng]).addTo(map);
+        marker.bindPopup(
+          '<strong><a href="/entity/' + m.id + '/">' + m.name + '</a></strong>' +
+          (m.tag ? '<br/><span style="color:#555;font-size:0.85rem">' + m.tag + '</span>' : '')
+        );
+        bounds.push([m.lat, m.lng]);
+      }
+      if (bounds.length > 1) {
+        map.fitBounds(bounds, { padding: [32, 32] });
+      }
+    })();
+  </script>
+
+</Site>

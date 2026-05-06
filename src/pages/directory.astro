@@ -1,0 +1,84 @@
+---
+import Site from '../layouts/Site.astro';
+import { directory, entities, allCategories, shortName, primaryTag, hashColor, heroImageSrc } from '../lib/data.js';
+import '../styles/directory.css';
+
+// Preview-mode toggle: while building out, we want to see all entities
+// (including manualReview ones) so we can sanity-check the data even before
+// we've approved them. The directory.json file holds only approved entries.
+// For the preview mode pull from entities.json so we see everything.
+const PREVIEW_ALL = true;
+const list = PREVIEW_ALL ? entities : directory;
+const categories = allCategories(list);
+---
+<Site title="Directory — Found in PT">
+
+  <p class="dir-intro">Everyone we've gathered so far — the artists, makers, and crafters of Port Townsend.</p>
+  {PREVIEW_ALL && <p class="preview-note">Preview mode — showing all {list.length} entries (approved and pending review).</p>}
+
+  <section class="dir-grid">
+    {list.map((e) => {
+      const hero = heroImageSrc(e);
+      const cats = (e.categories || []).join(',');
+      const skills = (e.skills || []).join(' ');
+      const search = `${e.personName || ''} ${e.businessName || ''} ${skills}`.toLowerCase();
+      return (
+        <a href={`/entity/${e.id}/`} class="maker-card" data-categories={cats} data-search={search}>
+          <div class="maker-thumb" style={hero ? `background-image:url(${hero});background-size:cover;background-position:center;` : `background:${hashColor(e.id)};`} ></div>
+          <div class="maker-info">
+            <span class="maker-name">{shortName(e)}</span>
+            <span class="maker-discipline">{primaryTag(e)}</span>
+          </div>
+        </a>
+      );
+    })}
+  </section>
+
+  <script is:inline>
+    (function () {
+      const btns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.maker-card');
+      const countEl = document.getElementById('visible-count');
+      const searchEl = document.getElementById('dir-search');
+      let activeCat = 'all';
+      let query = '';
+
+      function refilter() {
+        let visible = 0;
+        cards.forEach((card) => {
+          const cats = (card.dataset.categories || '').split(',');
+          const matchCat = activeCat === 'all' || cats.includes(activeCat);
+          const matchQuery = !query || (card.dataset.search || '').includes(query);
+          const show = matchCat && matchQuery;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (countEl) countEl.textContent = visible;
+      }
+
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCat = btn.dataset.filter;
+          refilter();
+        });
+      });
+
+      if (searchEl) {
+        searchEl.addEventListener('input', () => {
+          query = searchEl.value.trim().toLowerCase();
+          refilter();
+        });
+      }
+    })();
+  </script>
+
+</Site>
+
+<style is:global>
+  .preview-note {
+    font-size: 12px; color: var(--mid); font-style: italic;
+    padding: 0 var(--pad) 16px;
+  }
+</style>

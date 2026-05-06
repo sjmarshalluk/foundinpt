@@ -1,0 +1,84 @@
+---
+import Site from '../layouts/Site.astro';
+import { studios, events, studioOrEventSection, shortName, primaryTag, hashColor, heroImageSrc } from '../lib/data.js';
+import '../styles/directory.css';
+
+// Combine studios + events into one deduped list.
+const merged = new Map();
+for (const e of [...studios(), ...events()]) merged.set(e.id, e);
+const list = [...merged.values()];
+
+const sections = [
+  { key: 'studios',      label: 'Studios & Makerspaces',  entries: [] },
+  { key: 'facilitators', label: 'Facilitators',           entries: [] },
+  { key: 'community',    label: 'Community & Event Spaces', entries: [] },
+];
+const byKey = Object.fromEntries(sections.map((s) => [s.key, s]));
+for (const e of list) byKey[studioOrEventSection(e)].entries.push(e);
+---
+<Site title="Studios & Classes — Found in PT">
+
+  <p class="dir-intro">Studios, makerspaces, and the people and places offering classes, workshops, and gatherings to dive into a craft.</p>
+
+  {sections.map((s) => (
+    <section class="space-section" data-section={s.key}>
+      <h2 class="section-heading">{s.label}</h2>
+      <div class="dir-grid">
+        {s.entries.map((e) => {
+          const hero = heroImageSrc(e);
+          const skills = (e.skills || []).join(' ');
+          const search = `${e.personName || ''} ${e.businessName || ''} ${skills}`.toLowerCase();
+          return (
+            <a href={`/entity/${e.id}/`} class="maker-card" data-search={search} data-section={s.key}>
+              <div class="maker-thumb" style={hero ? `background-image:url(${hero});background-size:cover;background-position:center;` : `background:${hashColor(e.id)};`} ></div>
+              <div class="maker-info">
+                <span class="maker-name">{shortName(e)}</span>
+                <span class="maker-discipline">{primaryTag(e)}</span>
+              </div>
+            </a>
+          );
+        })}
+        {s.entries.length === 0 && (
+          <p class="empty-note">No entries yet.</p>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <script is:inline>
+    (function () {
+      const cards = document.querySelectorAll('.maker-card');
+      const totalCountEl = document.getElementById('visible-count');
+      const searchEl = document.getElementById('dir-search');
+      const sectionCountEls = document.querySelectorAll('[data-section-count]');
+      let query = '';
+
+      function refilter() {
+        let total = 0;
+        const perSection = {};
+        cards.forEach((card) => {
+          const matchQuery = !query || (card.dataset.search || '').includes(query);
+          card.style.display = matchQuery ? '' : 'none';
+          if (matchQuery) {
+            total++;
+            const sec = card.dataset.section;
+            perSection[sec] = (perSection[sec] || 0) + 1;
+          }
+        });
+        if (totalCountEl) totalCountEl.textContent = total;
+        sectionCountEls.forEach((el) => {
+          const sec = el.dataset.sectionCount;
+          el.textContent = perSection[sec] || 0;
+        });
+      }
+
+      if (searchEl) {
+        searchEl.addEventListener('input', () => {
+          query = searchEl.value.trim().toLowerCase();
+          refilter();
+        });
+      }
+    })();
+  </script>
+
+</Site>

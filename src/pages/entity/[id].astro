@@ -1,0 +1,553 @@
+---
+import Site from '../../layouts/Site.astro';
+import { entities, displayName, shortName, primaryTag, heroImageSrc, gallerySrcs, externalLinks, hashColor, resolveCtaButtons, relatedEntities } from '../../lib/data.js';
+
+export async function getStaticPaths() {
+  return entities.map((e) => ({
+    params: { id: e.id },
+    props:  { entity: e }
+  }));
+}
+
+const { entity } = Astro.props;
+const hero = heroImageSrc(entity);
+const gallery = gallerySrcs(entity);
+const links = externalLinks(entity);
+const isPreview = entity.audit?.manualReview === true;
+const ctaButtons = resolveCtaButtons(entity);
+const related = relatedEntities(entity, 4);
+const hasVisit = !!(entity.address || entity.hours?.length || entity.cta_buttons?.length);
+
+// What to show as the page lede:
+// 1. Categories (Maker / Artist / sub-cats) — primary identity tag
+// 2. Skills as a tighter line underneath if non-redundant
+const categoriesLine = (entity.categories || []).join(' · ');
+const skillsLine = (entity.skills || [])
+  .filter((s) => !(entity.categories || []).some((c) => c.toLowerCase() === s.toLowerCase()))
+  .join(' · ');
+const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
+---
+<Site title={`${displayName(entity)} — Found in PT`}>
+
+  {isPreview && (
+    <div class="preview-banner">
+      <strong>Preview page</strong> — this listing is awaiting review and isn't yet shown in the public directory.
+    </div>
+  )}
+
+  <article class="entity-page">
+
+    <section class="entity-hero-section">
+      <div class="entity-hero-inner">
+        <div class="entity-head">
+          <a href="/artists" class="back-link">&#8592; All artists &amp; makers</a>
+          <h1 class="entity-name">{displayName(entity)}</h1>
+          {categoriesLine && <p class="entity-categories">{categoriesLine}</p>}
+          {skillsLine && <p class="entity-skills">{skillsLine}</p>}
+          {locLine && <p class="entity-loc">{locLine}</p>}
+        </div>
+
+        {entity.bio && (
+          <div class="entity-bio">
+            <p>{entity.bio}</p>
+          </div>
+        )}
+
+        {links.length > 0 && (
+          <ul class="entity-links">
+            {links.map((l) => (
+              <li><a href={l.url} target="_blank" rel="noopener">{l.label}</a></li>
+            ))}
+          </ul>
+        )}
+
+        {entity.email && (
+          <div class="entity-contact">
+            <a href={`mailto:${entity.email}`}>{entity.email}</a>
+          </div>
+        )}
+
+        {(hero || gallery.length > 0) && (
+          <div class="entity-images">
+            {hero && (
+              <div class="entity-image" style={`background-image:url(${hero});background-color:${hashColor(entity.id)};`} ></div>
+            )}
+            {gallery.slice(0, hero ? 2 : 3).map((src, i) => (
+              <div class="entity-image" style={`background-image:url(${src});background-color:${hashColor(entity.id + i)};`} ></div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <div class="entity-body">
+
+
+    {hasVisit && (
+      <section class="entity-visit">
+        <h2 class="section-label">Visit</h2>
+        <div class="visit-grid">
+          <div class="visit-where">
+            {entity.address && <p class="visit-address">{entity.address}</p>}
+            {entity.address_line2 && <p class="visit-address-2">{entity.address_line2}</p>}
+            {(entity.neighborhood || entity.town) && (
+              <p class="visit-loc">{[entity.neighborhood, entity.town].filter(Boolean).join(' · ')}</p>
+            )}
+          </div>
+          {entity.hours?.length > 0 && (
+            <table class="visit-hours">
+              <tbody>
+                {entity.hours.map((row) => (
+                  <tr>
+                    <td class="hours-days">{row.days}</td>
+                    <td class="hours-time">{row.status || `${row.open} — ${row.close}`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {ctaButtons.length > 0 && (
+            <div class="visit-ctas">
+              {ctaButtons.map((b) => (
+                <a class={b.primary ? 'cta cta-primary' : 'cta'} href={b.url} target="_blank" rel="noopener">{b.label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    {entity.products?.length > 0 && (
+      <section class="entity-products">
+        <h2 class="section-label">A few things they sell</h2>
+        <div class="products-grid">
+          {entity.products.map((p) => (
+            <a href={p.product_url || entity.website} target="_blank" rel="noopener" class="product-card">
+              <div class="product-thumb" style={p.image_url ? `background-image:url(${p.image_url});background-size:cover;background-position:center;` : `background:${hashColor(entity.id + p.title)};`} ></div>
+              <div class="product-info">
+                <span class="product-title">{p.title}</span>
+                {p.price && <span class="product-price">{p.price}</span>}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {entity.events?.length > 0 && (
+      <section class="entity-events">
+        <h2 class="section-label">Upcoming</h2>
+        <ul class="events-list">
+          {entity.events.map((ev) => (
+            <li class="event-item">
+              <div class="event-date">{ev.date}</div>
+              <div class="event-body">
+                {ev.url
+                  ? <a class="event-title" href={ev.url} target="_blank" rel="noopener">{ev.title}</a>
+                  : <span class="event-title">{ev.title}</span>
+                }
+                {ev.location && <div class="event-location">{ev.location}</div>}
+                {ev.description && <p class="event-description">{ev.description}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {entity.pullquote?.text && (
+      <section class="entity-pullquote">
+        <h2 class="section-label">In their words</h2>
+        <blockquote class="pullquote-text">&ldquo;{entity.pullquote.text}&rdquo;</blockquote>
+        {(entity.pullquote.source || entity.pullquote.date) && (
+          <p class="pullquote-attr">
+            {[entity.pullquote.source, entity.pullquote.date].filter(Boolean).join(' · ')}
+          </p>
+        )}
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="entity-related">
+        <h2 class="section-label">You might also like</h2>
+        <div class="related-grid">
+          {related.map((r) => {
+            const rhero = heroImageSrc(r);
+            return (
+              <a href={`/entity/${r.id}/`} class="related-card">
+                <div class="related-thumb" style={rhero ? `background-image:url(${rhero});background-size:cover;background-position:center;` : `background:${hashColor(r.id)};`} ></div>
+                <div class="related-info">
+                  <span class="related-name">{shortName(r)}</span>
+                  <span class="related-discipline">{primaryTag(r)}</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    </div>
+  </article>
+
+</Site>
+
+<style is:global>
+  .preview-banner {
+    background: #fff8e1;
+    border-bottom: 1px solid #e0c66a;
+    padding: 10px var(--pad);
+    font-size: 14px;
+    color: #5a4a00;
+    text-align: center;
+  }
+
+  .entity-page {
+    --entity-max: 1280px;
+  }
+
+  .entity-hero-section {
+    background: #f4f4f4;
+    padding: clamp(32px, 5vw, 56px) var(--pad) clamp(40px, 5vw, 64px);
+  }
+  .entity-hero-inner {
+    max-width: var(--entity-max);
+    margin: 0 auto;
+  }
+
+  .entity-body {
+    max-width: var(--entity-max);
+    margin: 0 auto;
+    padding: 0 var(--pad) clamp(48px, 6vw, 80px);
+  }
+
+  .entity-head {
+    margin-bottom: 24px;
+  }
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--mid);
+    margin-bottom: 24px;
+    transition: color 120ms ease;
+  }
+  .back-link:hover { color: var(--coral); }
+  .entity-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .entity-categories {
+    font-size: 0.95rem;
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .entity-skills,
+  .entity-loc {
+    font-size: 0.875rem;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .entity-bio {
+    margin: 20px 0 24px;
+  }
+  .entity-bio p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--black);
+    max-width: 60ch;
+  }
+
+  .entity-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+  }
+  .entity-links a {
+    display: inline-block;
+    background: var(--white);
+    border: 1px solid #e5e5e5;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--black);
+    transition: border-color 120ms ease, color 120ms ease;
+  }
+  .entity-links a:hover {
+    border-color: var(--black);
+  }
+
+  .entity-contact {
+    margin: 16px 0 0;
+    font-size: 0.95rem;
+  }
+  .entity-contact a {
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .entity-contact a:hover { color: var(--coral); }
+
+  .entity-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .entity-image {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ── Section dividers ────────────────────────────── */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin: 0 0 20px;
+  }
+  .entity-visit,
+  .entity-products,
+  .entity-events,
+  .entity-related,
+  .entity-pullquote { display: none; }
+  .entity-body > section:first-child {
+    padding-top: clamp(48px, 6vw, 72px);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  /* ── Visit ────────────────────────────────────────── */
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px clamp(24px, 4vw, 64px);
+    align-items: start;
+  }
+  .visit-address {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .visit-address-2 {
+    font-size: 0.95rem;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+  .visit-loc {
+    font-size: 0.875rem;
+    color: var(--mid);
+    margin-top: 8px;
+  }
+  .visit-hours {
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .visit-hours td {
+    padding: 4px 0;
+    vertical-align: top;
+  }
+  .visit-hours .hours-days {
+    color: var(--mid);
+    padding-right: 24px;
+    white-space: nowrap;
+  }
+  .visit-hours .hours-time {
+    color: var(--black);
+  }
+  .visit-ctas {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .cta {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--black);
+    transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+  }
+  .cta:hover {
+    border-color: var(--coral);
+    color: var(--coral);
+  }
+  .cta-primary {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+  }
+  .cta-primary:hover {
+    background: var(--coral);
+    color: var(--white);
+    border-color: var(--coral);
+  }
+
+  /* ── Products ─────────────────────────────────────── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .product-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .product-thumb {
+    aspect-ratio: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    transition: opacity 120ms ease;
+  }
+  .product-card:hover .product-thumb { opacity: 0.85; }
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .product-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .product-price {
+    font-size: 0.85rem;
+    color: var(--mid);
+    white-space: nowrap;
+  }
+
+  /* ── Events ───────────────────────────────────────── */
+  .events-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .event-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mid);
+    letter-spacing: 0.02em;
+  }
+  .event-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black);
+  }
+  a.event-title {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 120ms ease, color 120ms ease;
+  }
+  a.event-title:hover {
+    color: var(--coral);
+    border-bottom-color: var(--coral);
+  }
+  .event-location {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+  .event-description {
+    font-size: 0.875rem;
+    color: var(--black);
+    line-height: 1.5;
+    margin-top: 8px;
+    max-width: 60ch;
+  }
+
+  /* ── Pullquote ────────────────────────────────────── */
+  .pullquote-text {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--black);
+    max-width: 60ch;
+    margin: 0;
+  }
+  .pullquote-attr {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-top: 16px;
+  }
+
+  /* ── Related ──────────────────────────────────────── */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .related-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .related-thumb {
+    aspect-ratio: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    transition: opacity 120ms ease;
+  }
+  .related-card:hover .related-thumb {
+    opacity: 0.85;
+  }
+  .related-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  .related-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+  .related-discipline {
+    font-size: 0.75rem;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .entity-images { grid-template-columns: 1fr; gap: 12px; }
+    .entity-image { aspect-ratio: 4 / 3; }
+    .visit-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .event-item { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

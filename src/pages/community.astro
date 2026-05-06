@@ -1,0 +1,37 @@
+---
+import Site from '../layouts/Site.astro';
+import '../styles/directory.css';
+---
+<Site title="Community — Found in PT">
+
+  <p class="dir-intro">Updates from the PT creative community — what local artists and makers are putting out into the world.</p>
+
+  <section class="coming-soon">
+    <p class="coming-soon-tag">Coming soon</p>
+    <p class="coming-soon-desc">
+      A place to surface YouTube channels like <em>Quilting in the Fast Lane</em>, new blog posts, podcast episodes, studio updates, and other things worth knowing about.
+    </p>
+  </section>
+
+</Site>
+
+<style is:global>
+  .coming-soon {
+    padding: 0 var(--pad) clamp(80px, 12vw, 160px);
+    max-width: 720px;
+  }
+  .coming-soon-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 16px;
+  }
+  .coming-soon-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--black);
+    max-width: 56ch;
+  }
+</style>
