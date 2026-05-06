@@ -19,7 +19,12 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
 <body class={hasHeroBg ? 'is-home' : ''}>
   <header>
     <a href="/" class="logo-text" aria-label="Found in PT"><img src="/logo.svg" alt="Found in PT" /></a>
-    <nav class="site-nav">
+    <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
       <a href="/shop">Shop</a>
       <a href="/community">Community</a>
       <a href="/about">About</a>
@@ -45,6 +50,26 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
   <footer>
     <span>Found in PT &mdash; Port Townsend, WA</span>
   </footer>
+
+  <script is:inline>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('nav-open', open);
+      });
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
 
@@ -103,4 +128,96 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
   }
   .nav-dropdown:hover .nav-menu,
   .nav-dropdown:focus-within .nav-menu { display: block; }
+
+  /* ── Hamburger ── */
+  .nav-toggle {
+    display: none;
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    z-index: 30;
+  }
+  .nav-toggle-bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--mid);
+    margin: 6px 0;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .is-home .nav-toggle-bar { background: var(--white); }
+  .is-home .nav-toggle[aria-expanded="true"] .nav-toggle-bar { background: var(--black); }
+
+  body.nav-open { overflow: hidden; }
+
+  @media (max-width: 780px) {
+    .nav-toggle { display: block; }
+
+    .site-nav {
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 0;
+      padding: 96px var(--pad) 32px;
+      background: var(--white);
+      overflow-y: auto;
+      transform: translateY(-100%);
+      transition: transform 220ms ease;
+      z-index: 20;
+    }
+    .site-nav.is-open { transform: translateY(0); }
+
+    .site-nav > a,
+    .nav-trigger {
+      width: 100%;
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
+      color: var(--black) !important;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .nav-dropdown { position: static; }
+    .nav-trigger {
+      pointer-events: none;
+      color: var(--mid) !important;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 24px 0 12px;
+      border-bottom: none;
+    }
+    .nav-caret { display: none; }
+
+    .nav-menu {
+      position: static;
+      display: block;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      min-width: 0;
+      background: transparent;
+    }
+    .nav-menu a {
+      padding: 14px 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .nav-menu a:hover { background: transparent; color: var(--coral); }
+  }
 </style>
