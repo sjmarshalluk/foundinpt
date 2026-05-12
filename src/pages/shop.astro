@@ -28,6 +28,14 @@ function locLabel(e) {
   return [e.neighborhood, e.town].filter(Boolean).join(' · ') || primaryTag(e);
 }
 
+// On /shop we want entity links to send users to the maker's own storefront,
+// not our internal entity page. Fall back to the entity page if nothing
+// external is on file.
+function entityShopUrl(e) {
+  return e.shop_url || e.website || `/entity/${e.id}/`;
+}
+const isExternal = (url) => /^https?:/i.test(url || '');
+
 // Map markers — each in-person shop with lat/lng. Built at SSG time and
 // embedded into the inline init script via Astro's `define:vars`.
 const shopMarkers = inPersonShops
@@ -60,7 +68,11 @@ const shopMarkers = inPersonShops
                   {product.price && <span class="product-price">{product.price}</span>}
                 </div>
               </a>
-              <a href={`/entity/${entity.id}/`} class="product-maker">{shortName(entity)}</a>
+              {(() => {
+                const url = entityShopUrl(entity);
+                const ext = isExternal(url);
+                return <a href={url} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} class="product-maker">{shortName(entity)}</a>;
+              })()}
             </div>
           );
         })}
@@ -95,8 +107,10 @@ const shopMarkers = inPersonShops
         {onlineMakers.map((e) => {
           const hero = heroImageSrc(e, 'shop');
           const search = `${e.name || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          const url = entityShopUrl(e);
+          const ext = isExternal(url);
           return (
-            <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="online">
+            <a href={url} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} class="maker-list-row" data-search={search} data-section="online">
               <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>
               <div class="maker-list-text">
                 <span class="maker-list-name">{shortName(e)}</span>
@@ -118,8 +132,10 @@ const shopMarkers = inPersonShops
         {inPersonShops.map((e) => {
           const hero = heroImageSrc(e, 'shop');
           const search = `${e.name || ''} ${e.neighborhood || ''} ${e.town || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          const url = entityShopUrl(e);
+          const ext = isExternal(url);
           return (
-            <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="in-person" data-id={e.id}>
+            <a href={url} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} class="maker-list-row" data-search={search} data-section="in-person" data-id={e.id}>
               <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>
               <div class="maker-list-text">
                 <span class="maker-list-name">{shortName(e)}</span>
