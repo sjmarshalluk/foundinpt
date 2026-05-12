@@ -1,6 +1,11 @@
 ---
 import Site from '../../layouts/Site.astro';
-import { entities, displayName, shortName, primaryTag, heroImageSrc, gallerySrcs, externalLinks, hashColor, resolveCtaButtons, relatedEntities } from '../../lib/data.js';
+import {
+  entities, displayName, shortName, primaryTag,
+  heroImageSrc, gallerySrcs, externalLinks, hashColor,
+  resolveCtaButtons, relatedEntities,
+  isFarm, isMaker, isArtist, isStudio, isEvent, isSpace, isLocalGoods, isSupply,
+} from '../../lib/data.js';
 
 export async function getStaticPaths() {
   return entities.map((e) => ({
@@ -12,6 +17,8 @@ export async function getStaticPaths() {
 const { entity } = Astro.props;
 const hero = heroImageSrc(entity);
 const gallery = gallerySrcs(entity);
+const heroImg = hero || gallery[0] || null;
+const restGallery = hero ? gallery : gallery.slice(1);
 const links = externalLinks(entity);
 const isPreview = entity.audit?.manualReview === true;
 const ctaButtons = resolveCtaButtons(entity);
@@ -26,6 +33,17 @@ const skillsLine = (entity.skills || [])
   .filter((s) => !(entity.categories || []).some((c) => c.toLowerCase() === s.toLowerCase()))
   .join(' · ');
 const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
+
+// Pick which listing page the back-link returns to, based on the entity's
+// primary classification. Mirrors the bucketing in data.js.
+function entityHome(e) {
+  if (isFarm(e))                                 return { href: '/farms',                label: 'All farms & producers' };
+  if (isMaker(e) || isArtist(e))                 return { href: '/artists',              label: 'All artists & makers' };
+  if (isStudio(e) || isEvent(e))                 return { href: '/studios-and-classes',  label: 'All studios & classes' };
+  if (isSpace(e) || isLocalGoods(e) || isSupply(e)) return { href: '/spaces',            label: 'All galleries & shops' };
+  return { href: '/artists', label: 'All artists & makers' };
+}
+const home = entityHome(entity);
 ---
 <Site title={`${displayName(entity)} — Found in PT`}>
 
@@ -37,48 +55,50 @@ const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
 
   <article class="entity-page">
 
-    <section class="entity-hero-section">
-      <div class="entity-hero-inner">
-        <div class="entity-head">
-          <a href="/artists" class="back-link">&#8592; All artists &amp; makers</a>
+    <section class="entity-top">
+      <div class="entity-top-inner">
+        {heroImg && (
+          <div class="entity-hero-image" style={`background-image:url(${heroImg});background-color:${hashColor(entity.id)};`}></div>
+        )}
+        <div class="entity-info">
+          <a href={home.href} class="back-link">&#8592; {home.label}</a>
           <h1 class="entity-name">{displayName(entity)}</h1>
           {categoriesLine && <p class="entity-categories">{categoriesLine}</p>}
           {skillsLine && <p class="entity-skills">{skillsLine}</p>}
           {locLine && <p class="entity-loc">{locLine}</p>}
+
+          {entity.bio && (
+            <div class="entity-bio">
+              <p>{entity.bio}</p>
+            </div>
+          )}
+
+          {links.length > 0 && (
+            <ul class="entity-links">
+              {links.map((l) => (
+                <li><a href={l.url} target="_blank" rel="noopener">{l.label}</a></li>
+              ))}
+            </ul>
+          )}
+
+          {entity.email && (
+            <div class="entity-contact">
+              <a href={`mailto:${entity.email}`}>{entity.email}</a>
+            </div>
+          )}
         </div>
-
-        {entity.bio && (
-          <div class="entity-bio">
-            <p>{entity.bio}</p>
-          </div>
-        )}
-
-        {links.length > 0 && (
-          <ul class="entity-links">
-            {links.map((l) => (
-              <li><a href={l.url} target="_blank" rel="noopener">{l.label}</a></li>
-            ))}
-          </ul>
-        )}
-
-        {entity.email && (
-          <div class="entity-contact">
-            <a href={`mailto:${entity.email}`}>{entity.email}</a>
-          </div>
-        )}
-
-        {(hero || gallery.length > 0) && (
-          <div class="entity-images">
-            {hero && (
-              <div class="entity-image" style={`background-image:url(${hero});background-color:${hashColor(entity.id)};`} ></div>
-            )}
-            {gallery.slice(0, hero ? 2 : 3).map((src, i) => (
-              <div class="entity-image" style={`background-image:url(${src});background-color:${hashColor(entity.id + i)};`} ></div>
-            ))}
-          </div>
-        )}
       </div>
     </section>
+
+    {restGallery.length > 0 && (
+      <section class="entity-gallery">
+        <div class="entity-gallery-grid">
+          {restGallery.map((src, i) => (
+            <div class="entity-gallery-image" style={`background-image:url(${src});background-color:${hashColor(entity.id + i)};`}></div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <div class="entity-body">
 
@@ -206,13 +226,49 @@ const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
     --entity-max: 1280px;
   }
 
-  .entity-hero-section {
-    background: #f4f4f4;
-    padding: clamp(32px, 5vw, 56px) var(--pad) clamp(40px, 5vw, 64px);
+  .entity-top {
+    padding: clamp(32px, 5vw, 64px) var(--pad) clamp(40px, 5vw, 72px);
   }
-  .entity-hero-inner {
+  .entity-top-inner {
     max-width: var(--entity-max);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+
+  .entity-hero-image {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+  }
+
+  .entity-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .entity-gallery {
+    padding: 0 var(--pad) clamp(48px, 6vw, 80px);
+  }
+  .entity-gallery-grid {
+    max-width: var(--entity-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .entity-gallery-image {
+    aspect-ratio: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
   }
 
   .entity-body {
@@ -221,73 +277,68 @@ const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
     padding: 0 var(--pad) clamp(48px, 6vw, 80px);
   }
 
-  .entity-head {
-    margin-bottom: 24px;
-  }
   .back-link {
     display: inline-block;
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--mid);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     transition: color 120ms ease;
   }
   .back-link:hover { color: var(--coral); }
+
   .entity-name {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     line-height: 1.05;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
   .entity-categories {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--black);
     font-weight: 600;
     margin-bottom: 4px;
   }
   .entity-skills,
   .entity-loc {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--mid);
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
   .entity-bio {
-    margin: 20px 0 24px;
+    margin: 28px 0 32px;
   }
   .entity-bio p {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     color: var(--black);
-    max-width: 60ch;
   }
 
   .entity-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     list-style: none;
     padding: 0;
-    margin: 0 0 8px;
+    margin: 0;
   }
   .entity-links a {
     display: inline-block;
     background: var(--white);
     border: 1px solid #e5e5e5;
-    padding: 9px 20px;
+    padding: 11px 22px;
     border-radius: 999px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--black);
     transition: border-color 120ms ease, color 120ms ease;
   }
-  .entity-links a:hover {
-    border-color: var(--black);
-  }
+  .entity-links a:hover { border-color: var(--black); }
 
   .entity-contact {
-    margin: 16px 0 0;
-    font-size: 0.95rem;
+    margin: 20px 0 0;
+    font-size: 1rem;
   }
   .entity-contact a {
     color: var(--black);
@@ -296,20 +347,6 @@ const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
     text-decoration-thickness: 1px;
   }
   .entity-contact a:hover { color: var(--coral); }
-
-  .entity-images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 40px;
-  }
-  .entity-image {
-    aspect-ratio: 4 / 5;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 
   /* ── Section dividers ────────────────────────────── */
   .section-label {
@@ -542,9 +579,13 @@ const locLine = [entity.neighborhood, entity.town].filter(Boolean).join(', ');
     margin-top: 2px;
   }
 
+  @media (max-width: 900px) {
+    .entity-top-inner { grid-template-columns: 1fr; gap: 32px; }
+    .entity-hero-image { aspect-ratio: 4 / 3; }
+    .entity-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 600px) {
-    .entity-images { grid-template-columns: 1fr; gap: 12px; }
-    .entity-image { aspect-ratio: 4 / 3; }
+    .entity-gallery-grid { grid-template-columns: 1fr; gap: 16px; }
     .visit-grid { grid-template-columns: 1fr; }
     .related-grid { grid-template-columns: repeat(2, 1fr); }
     .products-grid { grid-template-columns: repeat(2, 1fr); }

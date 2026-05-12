@@ -1,0 +1,152 @@
+---
+import Site from '../layouts/Site.astro';
+import '../styles/directory.css';
+---
+<Site title="Apply to be listed — Found in PT">
+
+  <p class="dir-intro">Apply to be listed in the Found in PT directory.</p>
+
+  <section class="register-page">
+    <div class="register-perks">
+      <h2 class="register-perks-title">Why join Found in PT</h2>
+      <ul class="register-perks-list">
+        <li>Get found by visitors and locals looking for what you do</li>
+        <li>A permanent home for your work beyond social media</li>
+        <li>Part of a curated directory, not an algorithm</li>
+        <li>Listed alongside galleries, farms, studios, and other locals</li>
+        <li>Free to be listed, forever</li>
+      </ul>
+    </div>
+
+    <div class="signup-path">
+      <p class="path-label">For artists, makers, galleries, farms &amp; more</p>
+      <h2 class="path-title">Tell us about you</h2>
+      <p class="register-page-desc">A few quick details so we can learn about your work and consider you for inclusion as the directory grows.</p>
+
+      <div id="mlb2-40128654" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40128654">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-name">
+                    <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="Name or studio name" autocomplete="given-name">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email address" autocomplete="email">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-maker_type ml-validate-required">
+                    <input aria-label="what you do" aria-required="true" type="text" class="form-control" name="fields[maker_type]" placeholder="What do you do? (e.g. potter, gallery, farm)">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-socials">
+                    <input aria-label="socials" type="text" class="form-control" name="fields[socials]" placeholder="Website or Instagram (optional)">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-notes">
+                    <input aria-label="notes" type="text" class="form-control" name="fields[notes]" placeholder="Anything else you want to share? (optional)">
+                  </div>
+                </div>
+              </div>
+              <div class="ml-form-checkboxRow ml-validate-required">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <div class="label-description"><p>I'd like occasional updates about Found in PT.</p></div>
+                </label>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Apply to be listed</button>
+                <button disabled="disabled" style="display:none" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none">
+            <div class="ml-form-successContent">
+              <h4>Application received.</h4>
+              <p>We'll be in touch as we add creators to Found in PT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    function ml_webform_success_40128654() {
+      var el = document.querySelector('.ml-subscribe-form-40128654 .row-success');
+      var frm = document.querySelector('.ml-subscribe-form-40128654 .row-form');
+      if (el) el.style.display = 'block';
+      if (frm) frm.style.display = 'none';
+    }
+  </script>
+  <script is:inline src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
+  <script is:inline>
+    fetch("https://assets.mailerlite.com/jsonp/2278716/forms/185204929500022263/takel");
+  </script>
+
+</Site>
+
+<style is:global>
+  .register-page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--pad) clamp(64px, 10vw, 120px);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+
+  .register-perks { padding-top: 8px; }
+  .register-perks-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .register-perks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .register-perks-list li {
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 1.5;
+    padding-left: 22px;
+    position: relative;
+  }
+  .register-perks-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--mid);
+  }
+
+  .register-page-desc {
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 1.5;
+    margin: 0 0 28px;
+    max-width: 52ch;
+  }
+
+  @media (max-width: 780px) {
+    .register-page { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

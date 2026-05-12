@@ -21,13 +21,13 @@ const categories = allCategories(list);
       const hero = heroImageSrc(e);
       const cats = (e.categories || []).join(',');
       const skills = (e.skills || []).join(' ');
-      const search = `${e.personName || ''} ${e.businessName || ''} ${skills}`.toLowerCase();
+      const search = `${e.name || ''} ${skills}`.toLowerCase();
       return (
         <a href={`/entity/${e.id}/`} class="maker-card" data-categories={cats} data-search={search}>
           <div class="maker-thumb" style={hero ? `background-image:url(${hero});background-size:cover;background-position:center;` : `background:${hashColor(e.id)};`} ></div>
           <div class="maker-info">
             <span class="maker-name">{shortName(e)}</span>
-            <span class="maker-discipline">{primaryTag(e)}</span>
+            {e.skills?.length > 0 && <span class="maker-skills">{e.skills.join(' · ')}</span>}
           </div>
         </a>
       );

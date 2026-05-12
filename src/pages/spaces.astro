@@ -20,20 +20,22 @@ for (const e of list) byKey[spaceSection(e)].entries.push(e);
 
   <p class="dir-intro">Galleries and shops where you can see and buy work being made here.</p>
 
-  {sections.map((s) => (
+  {sections.map((s) => {
+    const sectionContext = s.key === 'galleries' ? 'gallery' : 'shop';
+    return (
     <section class="space-section" data-section={s.key}>
       <h2 class="section-heading">{s.label}</h2>
       <div class="dir-grid">
         {s.entries.map((e) => {
-          const hero = heroImageSrc(e);
+          const hero = heroImageSrc(e, sectionContext);
           const skills = (e.skills || []).join(' ');
-          const search = `${e.personName || ''} ${e.businessName || ''} ${skills}`.toLowerCase();
+          const search = `${e.name || ''} ${skills}`.toLowerCase();
           return (
             <a href={`/entity/${e.id}/`} class="maker-card" data-search={search} data-section={s.key}>
               <div class="maker-thumb" style={hero ? `background-image:url(${hero});background-size:cover;background-position:center;` : `background:${hashColor(e.id)};`} ></div>
               <div class="maker-info">
                 <span class="maker-name">{shortName(e)}</span>
-                <span class="maker-discipline">{primaryTag(e)}</span>
+                {e.skills?.length > 0 && <span class="maker-skills">{e.skills.join(' · ')}</span>}
               </div>
             </a>
           );
@@ -43,7 +45,46 @@ for (const e of list) byKey[spaceSection(e)].entries.push(e);
         )}
       </div>
     </section>
-  ))}
+    );
+  })}
+
+  <section class="register-cta">
+    <div class="register-cta-grid">
+      <div class="register-cta-card">
+        <h2 class="register-cta-title">Do you run a gallery or local shop?</h2>
+        <p class="register-cta-desc">Add your space to the directory and help visitors and locals discover where to see and buy work made in Port Townsend. Free, forever.</p>
+        <a href="/register" class="register-cta-btn">Apply to be listed</a>
+      </div>
+      <div class="register-cta-card">
+        <h2 class="register-cta-title">Sign up to get updates</h2>
+        <p class="register-cta-desc">Occasional updates as new artists, makers, and places are added to Found in PT.</p>
+        <form id="dir-updates-form" class="dir-updates-form"
+              action="https://assets.mailerlite.com/jsonp/2278716/forms/185204736057672765/subscribe"
+              method="post">
+          <input type="email" name="fields[email]" required placeholder="Email address" autocomplete="email" aria-label="Email" class="dir-updates-input" />
+          <button type="submit" class="dir-updates-btn">Sign up</button>
+          <input type="hidden" name="ml-submit" value="1" />
+          <input type="hidden" name="anticsrf" value="true" />
+        </form>
+        <p id="dir-updates-success" class="dir-updates-success" hidden>Thanks — you're on the list.</p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const form = document.getElementById('dir-updates-form');
+      const success = document.getElementById('dir-updates-success');
+      if (!form || !success) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try { fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' }); } catch (err) {}
+        form.hidden = true;
+        success.hidden = false;
+      });
+    })();
+  </script>
 
   <script is:inline>
     (function () {

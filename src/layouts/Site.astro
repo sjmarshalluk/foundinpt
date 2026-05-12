@@ -2,7 +2,10 @@
 const { title = 'Found in PT', description = "A directory of artists, makers, and crafters in and around Port Townsend." } = Astro.props;
 import '../styles/style.css';
 const path = Astro.url.pathname;
-const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '/about/';
+const hasHeroBg = path === '/about' || path === '/about/';
+const normPath = path === '/' ? '/' : path.replace(/\/$/, '');
+const isActive = (href) => normPath === href;
+const currentYear = new Date().getFullYear();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +16,7 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
   <meta name="description" content={description} />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
   <slot name="head" />
 </head>
 <body class={hasHeroBg ? 'is-home' : ''}>
@@ -25,20 +28,28 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
       <span class="nav-toggle-bar"></span>
     </button>
     <nav class="site-nav" id="site-nav">
-      <a href="/shop">Shop</a>
-      <a href="/community">Community</a>
-      <a href="/about">About</a>
-      <div class="nav-dropdown">
-        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">
-          Directory
-          <span class="nav-caret" aria-hidden="true">▾</span>
-        </button>
-        <div class="nav-menu" role="menu">
-          <a href="/artists">Artists &amp; Makers</a>
-          <a href="/spaces">Galleries &amp; Shops</a>
-          <a href="/farms">Farms &amp; Producers</a>
-          <a href="/studios-and-classes">Studios &amp; Classes</a>
-        </div>
+      <div class="nav-section nav-section-directory">
+        <a href="/artists"             aria-current={isActive('/artists')             ? 'page' : undefined}>Artists &amp; Makers</a>
+        <a href="/farms"               aria-current={isActive('/farms')               ? 'page' : undefined}>Farms &amp; Producers</a>
+        <a href="/studios-and-classes" aria-current={isActive('/studios-and-classes') ? 'page' : undefined}>Studios &amp; Classes</a>
+        <a href="/spaces"              aria-current={isActive('/spaces')              ? 'page' : undefined}>Galleries &amp; Shops</a>
+      </div>
+      <div class="nav-section nav-section-utility">
+        <a href="/shop" aria-current={isActive('/shop') ? 'page' : undefined}>Shop</a>
+        <a href="https://www.facebook.com/profile.php?id=61588945546441" target="_blank" rel="noopener" aria-label="Facebook" class="nav-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          <span class="nav-icon-label">Facebook</span>
+        </a>
+        <a href="https://instagram.com/foundinpt" target="_blank" rel="noopener" aria-label="Instagram" class="nav-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          <span class="nav-icon-label">Instagram</span>
+        </a>
       </div>
     </nav>
   </header>
@@ -47,8 +58,47 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
     <slot />
   </main>
 
-  <footer>
-    <span>Found in PT &mdash; Port Townsend, WA</span>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-col footer-brand">
+        <a href="/" class="footer-logo" aria-label="Found in PT — home">
+          <img src="/logo.svg" alt="Found in PT" />
+        </a>
+        <p class="footer-tagline">A curated directory of artists, makers, and crafters in and around Port Townsend, WA.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Directory">
+        <h3 class="footer-heading">Directory</h3>
+        <ul class="footer-links">
+          <li><a href="/artists">Artists &amp; Makers</a></li>
+          <li><a href="/spaces">Galleries &amp; Shops</a></li>
+          <li><a href="/farms">Farms &amp; Producers</a></li>
+          <li><a href="/studios-and-classes">Studios &amp; Classes</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Discover">
+        <h3 class="footer-heading">Discover</h3>
+        <ul class="footer-links">
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Get involved">
+        <h3 class="footer-heading">Get involved</h3>
+        <ul class="footer-links">
+          <li><a href="/register">Apply to be listed</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61588945546441" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com/foundinpt" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer-bottom">
+      <p class="footer-copyright">&copy; {currentYear} Found in PT &middot; Port Townsend, WA</p>
+    </div>
   </footer>
 
   <script is:inline>
@@ -74,60 +124,49 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
 </html>
 
 <style is:global>
-  header { display: flex; justify-content: space-between; align-items: center; }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 2px solid #eee;
+  }
+  .logo-text { justify-self: start; }
 
-  .site-nav {
-    font-size: 1rem;
-    font-weight: 500;
+  /* The <nav> doesn't take a grid cell — its children participate directly. */
+  .site-nav { display: contents; font-size: 1rem; font-weight: 500; }
+
+  .nav-section {
     display: flex;
     gap: 28px;
     align-items: center;
   }
-  .site-nav > a,
-  .nav-trigger {
-    color: var(--mid);
-    padding: 8px 0;
-  }
-  .site-nav > a:hover,
-  .nav-trigger:hover { color: var(--coral); }
+  .nav-section-directory { grid-column: 2; justify-self: center; }
+  .nav-section-utility   { grid-column: 3; justify-self: end; }
 
-  .nav-dropdown { position: relative; }
-  .nav-trigger {
-    appearance: none;
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-caret { font-size: 0.7em; line-height: 1; }
+  .site-nav a { color: var(--mid); padding: 8px 0; position: relative; }
+  .site-nav a:hover { color: var(--coral); }
 
-  .nav-menu {
+  .nav-icon { display: inline-flex; align-items: center; }
+  .nav-icon svg { display: block; }
+  .nav-icon-label {
     position: absolute;
-    top: 100%;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    border: 0;
+  }
+  .site-nav a[aria-current="page"] { color: var(--black); font-weight: 600; }
+  .site-nav a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    left: 0;
     right: 0;
-    background: var(--white);
-    border: 1px solid #eee;
-    padding: 6px 0;
-    min-width: 260px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    display: none;
-    z-index: 10;
+    bottom: 0;
+    height: 2px;
+    background: var(--coral);
   }
-  .nav-menu a {
-    display: block;
-    padding: 10px 18px;
-    color: var(--black);
-    font-size: 0.95rem;
-  }
-  .nav-menu a:hover {
-    background: #f4f4f4;
-    color: var(--coral);
-  }
-  .nav-dropdown:hover .nav-menu,
-  .nav-dropdown:focus-within .nav-menu { display: block; }
+  .is-home .site-nav a[aria-current="page"] { color: var(--white); }
 
   /* ── Hamburger ── */
   .nav-toggle {
@@ -151,9 +190,7 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
-    opacity: 0;
-  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
@@ -163,9 +200,14 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
   body.nav-open { overflow: hidden; }
 
   @media (max-width: 780px) {
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
     .nav-toggle { display: block; }
 
     .site-nav {
+      display: flex;
       position: fixed;
       inset: 0;
       flex-direction: column;
@@ -181,43 +223,31 @@ const hasHeroBg = path === '/' || path === '' || path === '/about' || path === '
     }
     .site-nav.is-open { transform: translateY(0); }
 
-    .site-nav > a,
-    .nav-trigger {
+    .nav-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+    .nav-section + .nav-section { margin-top: 24px; padding-top: 24px; border-top: 1px solid #eee; }
+
+    .site-nav a,
+    .is-home .site-nav a {
       width: 100%;
       padding: 18px 0;
       border-bottom: 1px solid #eee;
-      color: var(--black) !important;
+      color: var(--black);
       font-size: 1.25rem;
       font-weight: 500;
     }
+    .nav-section > a:last-child { border-bottom: none; }
 
-    .nav-dropdown { position: static; }
-    .nav-trigger {
-      pointer-events: none;
-      color: var(--mid) !important;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 24px 0 12px;
-      border-bottom: none;
-    }
-    .nav-caret { display: none; }
-
-    .nav-menu {
+    .nav-icon { gap: 14px; }
+    .nav-icon-label {
       position: static;
-      display: block;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      min-width: 0;
-      background: transparent;
+      width: auto; height: auto;
+      padding: 0; margin: 0;
+      overflow: visible; clip: auto;
     }
-    .nav-menu a {
-      padding: 14px 0;
-      font-size: 1.1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .nav-menu a:hover { background: transparent; color: var(--coral); }
   }
 </style>

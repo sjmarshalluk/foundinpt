@@ -16,12 +16,11 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Northwind Art was founded in January 2021, when two established art organizations, Port Townsend School of the Arts and Northwind Arts Center, joined together as a way to weather the Covid storm and to support artists during difficult times. We are now known simply as NORTHWIND ART.\n\nNorthwind Art is a nonprofit organization that puts artists at the heart of all we do. Our mission: Empowering meaningful connections through art. Cultivating creativity. Growing artists.\n\nOur incredible community of donors, partners, and grant organizations make it all possible.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Northwind Art",
     "categories": [
-      "Gallery"
+      "Gallery",
+      "Classes"
     ],
     "skills": [],
     "bluesky": "",
@@ -30,10 +29,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "Jeanette_Best_Gallery_crop_1080x.webp",
+    "local_images": [
+      "Jeanette_Best_Gallery_crop_1080x.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Northwind Art",
+    "sells_in_person": true
   },
   {
     "id": "port-townsend-gallery",
@@ -52,10 +55,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Since 1997, Port Townsend Gallery has grown from a small collective into a vibrant fine arts cooperative on the Olympic Peninsula. Home to 28 talented artists, our gallery offers a welcoming space to explore exceptional work across a wide range of mediums.\n\nOperated entirely by the artists themselves, we take pride in curating a visually engaging experience grounded in passion and professionalism.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Port Townsend Gallery",
     "categories": [
       "Gallery"
     ],
@@ -68,10 +69,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "301706552_479911514140198_7712813553583604350_n.jpg",
+    "local_images": [
+      "301706552_479911514140198_7712813553583604350_n.jpg"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Port Townsend Gallery",
+    "sells_in_person": true
   },
   {
     "id": "gallery-9-north-olympic-artist",
@@ -90,10 +95,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "An Art Gallery in Port Townsend – Washington State’s Victorian Seaport & Arts Community",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Gallery 9 North Olympic Artist",
     "categories": [
       "Gallery"
     ],
@@ -104,10 +107,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "gallery-nine-03.webp",
+    "local_images": [
+      "gallery-nine-03.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Gallery 9 North Olympic Artist",
+    "sells_in_person": true
   },
   {
     "id": "pacific-traditions-gallery",
@@ -126,10 +133,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "We offer original artwork from The First People of the North American Coastal Tribes.\nSome of the tribes that have their artwork represented in our gallery include Coast Salish, Haida, Nuu-chah-nulth, Tlingit, and Cowichan.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Pacific Traditions Gallery",
     "categories": [
       "Gallery",
       "Museum",
@@ -142,10 +147,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "pacific-traditions-gallery-1.webp",
+    "local_images": [
+      "pacific-traditions-gallery-1.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Pacific Traditions Gallery",
+    "sells_in_person": true
   },
   {
     "id": "aurora-loop-gallery",
@@ -164,10 +173,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "A native Chicagoan, O’Shaughnessy lived for 28 years in the Wicker Park neighborhood, where she started Wood Street Gallery. It was off the beaten path, which she saw as a challenge to getting people to come see art. Her focus was emerging Chicago artists, those with potential, who hadn’t had any gallery shows. A combination of themed group and solo shows brought people out to the neighborhood. Having 5,000 square feet, there was an opportunity to have up to 5 individual shows a month. \n\nO’Shaughnessy, and her husband, Charlie Van Gilder, both artists, sold their building in Chicago in 2014, and made the decision to move to Port Townsend, where Van Gilder had lived in the late 70’s and early 80’s. Since then, they have been focusing on their own art.\n\nO’Shaughnessy decided in 2021 that she wanted to expand her studio from the small room she’d been working in and build a studio where she could get back to making sculpture. As she planned it, the idea for a gallery attached to the studio seemed the right thing to do. She wanted to recreate what she had accomplished in Chicago, having a place to help the creative artists on the peninsula show their work.\n\n",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Aurora Loop Gallery",
     "categories": [
       "Gallery"
     ],
@@ -178,10 +185,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "Aurora-Loop-Gallery.webp",
+    "local_images": [
+      "Aurora-Loop-Gallery.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Aurora Loop Gallery",
+    "sells_in_person": true
   },
   {
     "id": "mara-s-gallery",
@@ -202,8 +213,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Mara's Gallery",
     "categories": [
       "Gallery"
     ],
@@ -217,7 +226,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Mara's Gallery"
   },
   {
     "id": "the-grover-gallery",
@@ -238,8 +248,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "The Grover Gallery",
     "categories": [
       "Gallery"
     ],
@@ -250,10 +258,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "the-grover-gallery.webp",
+    "local_images": [
+      "the-grover-gallery.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "The Grover Gallery",
+    "sells_in_person": true
   },
   {
     "id": "greenpod-gallery",
@@ -272,10 +284,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Greenpod Gallery is not merely a showcase of art for the home; it’s an affirmation of a lifestyle that echoes our reverence for the planet. Here, simplicity meets sophistication, and each acquisition becomes a statement of values. Explore a curated space where functional art seamlessly integrates into your living space, offering an elegant testament to the intersection of artistry and sustainability. Welcome to Greenpod Gallery, where every piece invites you to participate in a conscious journey of ethical design, redefining the very essence of home.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Greenpod Gallery",
     "categories": [
       "Gallery"
     ],
@@ -288,10 +298,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "20230805_152119-scaled.jpg",
+    "local_images": [
+      "20230805_152119-scaled.jpg"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Greenpod Gallery",
+    "sells_in_person": true
   },
   {
     "id": "zee-tai-collective",
@@ -301,7 +315,7 @@
     "address": "918 Water St, Port Townsend, WA 98368, USA",
     "lat": 48.114335499999996,
     "lng": -122.75713029999999,
-    "website": "",
+    "website": "https://zeetai.kit.com/",
     "instagram": "",
     "facebook": "",
     "youtube": "",
@@ -310,10 +324,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "The Zee Tai Collective is a community of artists and makers located in the historic Zee Tai building at 918 Water Street in downtown Port Townsend; our collective is a vibrant space for artists, makers, and the community to connect through creative expression.\n\nEstablished in 1879, the original Zee Tai Chinese Mercantile provided essential goods to Port Townsend's Chinese community. The name \"Zee Tai\" translates to \"Greater Harmony,\" a fitting reflection of our collective's mission—to cultivate a shared, creative space where artists and visitors can engage, collaborate, and find inspiration.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Zee Tai Collective",
     "categories": [
       "Gallery",
       "Nonprofit"
@@ -325,10 +337,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "icbXcD9Aks8i17A5uBXnES.jpeg",
+    "local_images": [
+      "icbXcD9Aks8i17A5uBXnES.jpeg"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Zee Tai Collective",
+    "sells_in_person": true
   },
   {
     "id": "don-tiller",
@@ -346,11 +362,9 @@
     "etsy": "",
     "shop_url": "",
     "email": "",
-    "hero_image_url": "https://images.squarespace-cdn.com/content/v1/69bd9b805e8dff61956d21a7/d986269c-da6f-4c1f-b257-2371adb816f1/don-tiller.jpg?format=2500w",
+    "hero_image_url": "https://images.squarespace-cdn.com/content/v1/69bd9b805e8dff61956d21a7/c8d2fe57-8f59-4ac5-8253-c3b09c2dbe71/don-tiller-Country-Day-36x30.jpg",
     "bio": "Don Tiller is an award-winning acrylic painter based on the Olympic Peninsula who creates contemporary western landscapes using vivid colors and simplified forms to explore humanity's relationship with the natural world.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Don Tiller",
     "categories": [
       "Painting"
     ],
@@ -361,8 +375,10 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "dt1.png",
+    "local_images": [
+      "dt1.png"
+    ],
     "gallery_image_urls": [
       "https://images.squarespace-cdn.com/content/v1/69bd9b805e8dff61956d21a7/c8d2fe57-8f59-4ac5-8253-c3b09c2dbe71/don-tiller-Country-Day-36x30.jpg",
       "https://images.squarespace-cdn.com/content/v1/69bd9b805e8dff61956d21a7/8c08639c-1bb5-40b7-8116-25ec7619015c/don-tiller-Late-Summer-36x54.jpg",
@@ -397,7 +413,8 @@
       "text": "I want each piece to feel like the moment just before something happens — the wind picks up, the light shifts. The landscape is doing the work; I just try not to get in its way.",
       "source": "Conversation with the artist",
       "date": "May 2026"
-    }
+    },
+    "name": "Don Tiller"
   },
   {
     "id": "art-by-aliina",
@@ -418,8 +435,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/5fc552c892c50b1a1e94cba1/1608590026162-HUFVOMLGVA6XHLPNQF5E/aliina+fusion?format=2500w",
     "bio": "Aliina Lahti is a multi-medium artist who creates original paintings, drawings, and upcycled bicycle tube jewelry, while also offering private and group art classes and yoga lessons.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Art by Aliina",
     "categories": [
       "Painting"
     ],
@@ -438,48 +453,19 @@
       "https://images.squarespace-cdn.com/content/v1/5fc552c892c50b1a1e94cba1/d4438cec-cdc3-4e7f-9204-c1cf87ca9332/IMG_5805.jpg?format=2500w",
       "https://images.squarespace-cdn.com/content/v1/5fc552c892c50b1a1e94cba1/1732912764236-3XBUKRGQU4VQZOD92WMJ/image-asset.jpeg"
     ],
-    "previewable": true
+    "previewable": true,
+    "name": "Art by Aliina",
+    "image_tags": {
+      "https://images.squarespace-cdn.com/content/v1/5fc552c892c50b1a1e94cba1/d4438cec-cdc3-4e7f-9204-c1cf87ca9332/IMG_5805.jpg?format=2500w": [
+        "artist"
+      ],
+      "https://images.squarespace-cdn.com/content/v1/5fc552c892c50b1a1e94cba1/11454f12-be5c-48e3-b402-dd8262d679e0/IMG_4888.jpg?format=2500w": [
+        "facilitator"
+      ]
+    }
   },
   {
-    "id": "northwind-art-school",
-    "kind": "venue",
-    "town": "Port Townsend",
-    "neighborhood": "",
-    "address": "200 Battery Way Building 306, Port Townsend, WA 98368, USA",
-    "lat": 48.135064299999996,
-    "lng": -122.76933640000001,
-    "website": "https://northwindart.org/collections/courses",
-    "instagram": "",
-    "facebook": "",
-    "youtube": "",
-    "tiktok": "",
-    "etsy": "",
-    "shop_url": "",
-    "email": "",
-    "hero_image_url": "",
-    "bio": "",
-    "showOnSite": true,
-    "personName": "",
-    "businessName": "Northwind Art School",
-    "categories": [
-      "Classes"
-    ],
-    "skills": [
-      "pottery"
-    ],
-    "bluesky": "",
-    "threads": "",
-    "twitter": "",
-    "pinterest": "",
-    "vimeo": "",
-    "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
-    "gallery_image_urls": [],
-    "previewable": true
-  },
-  {
-    "id": "sea-hags-deadwood-art-other-cool-stuff",
+    "id": "sea-hags-deadwood-art",
     "kind": "venue",
     "town": "Port Townsend",
     "neighborhood": "",
@@ -495,10 +481,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "I believe the culmination of all I have done throughout my life has led me to find my flow in working with driftwood, reclaimed wood, resin, and stained glass.\n\nI get lost in the direction the wood takes me to bring its beauty to the surface and create a new purpose for it and its beauty.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Sea Hags Deadwood Art",
     "categories": [
       "Woodwork"
     ],
@@ -512,11 +496,17 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "shda1.png",
+    "local_images": [
+      "shda1.png",
+      "shda2.png",
+      "shda3.png",
+      "shda4.png"
+    ],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Woodworker"
+    "title": "Woodworker",
+    "name": "Sea Hags Deadwood Art"
   },
   {
     "id": "park-avenue-studio",
@@ -537,8 +527,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Park Avenue Studio",
     "categories": [
       "Shop"
     ],
@@ -555,7 +543,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Park Avenue Studio"
   },
   {
     "id": "scribbles",
@@ -574,10 +563,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Art exploration, or process art, is a creative endeavor that focuses on the process of art making, rather than the production of an end result. It may look messy and nonsensical to some, but for the maker, it provides opportunities to express emotions and ideas that they may not have the vocabulary or technical skill to represent. Through process art, makers also get to explore materials from a sensory perspective, follow feelings and trains of thought without constraint, and practice intellectual, social, and emotional skills.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Scribbles",
     "categories": [
       "Space"
     ],
@@ -588,10 +575,13 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "FullSizeRender_1761575975.webp",
+    "local_images": [
+      "FullSizeRender_1761575975.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Scribbles"
   },
   {
     "id": "howdy-studio",
@@ -612,8 +602,6 @@
     "hero_image_url": "https://static.wixstatic.com/media/3fbf7e_cdca9961ea91428bbd0fa78a566980fa~mv2.jpg/v1/fill/w_1280,h_1598,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/3fbf7e_cdca9961ea91428bbd0fa78a566980fa~mv2.jpg",
     "bio": "Howdy Art Studio is a shared creative space in Port Townsend where artists Burl Norville and Julie Read collaborate, producing acrylic paintings on canvas and wood featuring animals and other imaginative subjects.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Howdy Studio",
     "categories": [
       "Studio"
     ],
@@ -644,7 +632,8 @@
         "description": "Julie offers acrylic realism painting classes for all skill levels, with current offerings listed on her external site."
       }
     ],
-    "title": "Artist"
+    "title": "Artist",
+    "name": "Howdy Studio"
   },
   {
     "id": "port-townsend-potters-guild",
@@ -663,10 +652,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Having a public space with different people that are all interacting with ceramics in different ways was something Tori found inspiring at her college studio. This project is an effort to replicate that feeling, while creating a much needed space for our community of aspiring and experienced potters alike.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Port Townsend Potters Guild",
     "categories": [
       "Makerspace"
     ],
@@ -682,10 +669,13 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "unsplash-image-L_bXRw-bZ9I.webp",
+    "local_images": [
+      "unsplash-image-L_bXRw-bZ9I.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Port Townsend Potters Guild"
   },
   {
     "id": "alice-studio",
@@ -706,8 +696,6 @@
     "hero_image_url": "https://assets.bigcartel.com/theme_images/158517036/IMG_1109.jpeg?auto=format&fit=max&w=2000",
     "bio": "Alice Studio is a woman-owned and Native Hawaiian-owned glass art shop that crafts modern, durable stained glass pieces and art objects designed to bring light and color into everyday spaces without chasing disposable trends.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Alice Studio",
     "categories": [
       "Glass"
     ],
@@ -774,10 +762,11 @@
         "description": ""
       }
     ],
-    "title": "Glass Artist"
+    "title": "Glass Artist",
+    "name": "Alice Studio"
   },
   {
-    "id": "ptartist-sandra-stowell",
+    "id": "sandra-stowell",
     "kind": "venue",
     "town": "Port Townsend",
     "neighborhood": "",
@@ -795,8 +784,6 @@
     "hero_image_url": "https://ptartist.com/wp-content/uploads/2026/04/PossibleTubularLandscape.jpg",
     "bio": "Sandra Stowell is a Port Townsend-based artist who creates mixed-media assemblage works including sculpture, printmaking, casting, collage, and dimensional drawer art pieces.",
     "showOnSite": true,
-    "personName": "Sandra Stowell",
-    "businessName": "",
     "categories": [
       "Mixed Media"
     ],
@@ -860,10 +847,11 @@
         "description": "A figurative sculpture depicting three angels, available as prints in two sizes and four materials."
       }
     ],
-    "title": "Artist"
+    "title": "Artist",
+    "name": "Sandra Stowell"
   },
   {
-    "id": "laughingnome-pottery-formerly-daily-bird-pottery",
+    "id": "laughingnome-pottery",
     "kind": "venue",
     "town": "Port Townsend",
     "neighborhood": "",
@@ -881,8 +869,6 @@
     "hero_image_url": "https://5540a3ff56d40e3805d3.cdn6.editmysite.com/uploads/b/5540a3ff56d40e3805d301625536e8a16ad123b5a338481198e5e5f4ce8006b1/IMG_5387_1772398563.jpeg?width=2400&optimize=medium",
     "bio": "LaughinGnome Pottery (formerly Daily Bird Pottery) is a ceramics maker selling handcrafted naked pottery pieces through their online shop.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "LaughinGnome Pottery",
     "categories": [
       "Ceramics"
     ],
@@ -901,7 +887,8 @@
     "local_images": [],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Ceramicist"
+    "title": "Ceramicist",
+    "name": "LaughinGnome Pottery"
   },
   {
     "id": "egg-and-i-pottery",
@@ -922,8 +909,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Egg and I Pottery",
     "categories": [
       "Studio",
       "Maker",
@@ -943,7 +928,8 @@
     "local_images": [],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Ceramicist"
+    "title": "Ceramicist",
+    "name": "Egg and I Pottery"
   },
   {
     "id": "sturgis-studio",
@@ -964,8 +950,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/67aba460d0cbc41b01a43189/c52ea834-e646-4058-9380-3daf41f251bd/Randy+Sturgis+Studio+.jpg",
     "bio": "Randy Sturgis is a contemporary non-objective painter working in oils, acrylic, and charcoal on paper and canvas, creating large-scale environmental artworks inspired by people, places, and social issues.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Sturgis Studio",
     "categories": [
       "Studio"
     ],
@@ -1001,7 +985,8 @@
         "description": "Randy Sturgis's paintings are shown in a hospital setting, with works available via Northwind Art."
       }
     ],
-    "title": "Artist"
+    "title": "Artist",
+    "name": "Sturgis Studio"
   },
   {
     "id": "corvidae-press",
@@ -1020,10 +1005,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Corvidae Press is an association of artists who share an interest in fine art printmaking and who support and manage a communal non-toxic printmaking facility. Membership is based on an interest in non-toxic printmaking and a commitment to the cooperative structure and spirit of the organization. Corvidae Press was founded in 2006 as a nonprofit corporation governed by an elected board of directors, dedicated to the pursuit of the printmaker’s craft, with a focus on education, community, and regional interaction.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Corvidae Press",
     "categories": [
       "Makerspace"
     ],
@@ -1036,10 +1019,16 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "image.jpeg",
+    "local_images": [
+      "HomeSlide-2.jpg",
+      "image (1).jpeg",
+      "image (2).jpeg",
+      "image.jpeg"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Corvidae Press"
   },
   {
     "id": "port-townsend-glassworks",
@@ -1060,8 +1049,6 @@
     "hero_image_url": "https://ptglassworks.com/wp-content/uploads/2023/06/crop-0-0-2048-1365-0-323007912_930191454999135_7319011797806629461_n.jpg",
     "bio": "Port Townsend Glassworks is a glassblowing studio offering private hands-on experiences, memorial glass incorporating loved ones' ashes, and live demos for events.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Port Townsend Glassworks",
     "categories": [
       "Studio",
       "Maker",
@@ -1128,7 +1115,8 @@
         "description": "A functional hand-blown drinking glass crafted by Port Townsend Glassworks."
       }
     ],
-    "title": "Glass Artist"
+    "title": "Glass Artist",
+    "name": "Port Townsend Glassworks"
   },
   {
     "id": "abraxas-crow",
@@ -1149,8 +1137,6 @@
     "hero_image_url": "http://abraxascrow.com/images/IMG_9247bt.jpg",
     "bio": "Abraxas Crow is the steel sculpture work of Gunter Reimnitz, who crafts metal pieces depicting birds and other subjects including crows, ravens, owls, herons, and roosters.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Abraxas Crow",
     "categories": [
       "Metalwork"
     ],
@@ -1216,7 +1202,8 @@
         "description": "An outdoor arts festival in Anacortes featuring the artist's steel sculptures."
       }
     ],
-    "title": "Sculptor"
+    "title": "Sculptor",
+    "name": "Abraxas Crow"
   },
   {
     "id": "type-townsend-studio",
@@ -1237,8 +1224,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/633b0bcf77318e44e1f2e229/45a2c20e-327f-406a-99e6-ae28bb1d52c3/remington1.jpg",
     "bio": "Type Townsend Studio is a Port Townsend, Washington business specializing in typewriters, antiques, and art, offering repair services and accepting donated machines.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Type Townsend Studio",
     "categories": [
       "Local Goods"
     ],
@@ -1258,7 +1243,9 @@
       "https://images.squarespace-cdn.com/content/v1/633b0bcf77318e44e1f2e229/243c60f6-2892-4970-b8d0-5f9807703772/CKLF-290.jpg",
       "https://images.squarespace-cdn.com/content/v1/633b0bcf77318e44e1f2e229/87ad5ae8-4e8c-4df3-a127-bb9e027ca39b/CKLF-57.jpg"
     ],
-    "previewable": true
+    "previewable": true,
+    "name": "Type Townsend Studio",
+    "sells_in_person": true
   },
   {
     "id": "port-townsend-school-of-woodworking",
@@ -1279,8 +1266,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/52e953e8e4b04e8cd686746b/383e5071-a60f-44a4-93d8-886bfc24c24c/_1095878_Andrew_Mingione+%281%29.jpg?format=2500w",
     "bio": "The Port Townsend School of Woodworking is a nonprofit educational institution in Port Townsend, Washington that welcomes students of all backgrounds to learn fine craftsmanship, offering courses ranging from hand-cut joinery and furniture making to turning, coopering, and carving traditions from various cultures.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Port Townsend School of Woodworking",
     "categories": [
       "Makerspace",
       "Classes"
@@ -1346,7 +1331,8 @@
         "url": "https://www.ptwoodschool.org/course-map/brush-making-foraged-functional",
         "description": "A weekend class with Dan Hawkins teaching participants how to craft functional brushes from found natural materials for diverse applications."
       }
-    ]
+    ],
+    "name": "Port Townsend School of Woodworking"
   },
   {
     "id": "helga-winter-woodturner",
@@ -1367,8 +1353,6 @@
     "hero_image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRA-M_EQXjQ0U8ezrgM0Npfy43jrdMItdGuWmtkeGYGa7rmbKeP5S0kZpA-3sMMAntZ3Ey2z3-GeFkJxlUq9YBAPAlWe6TfGIoXO_iNdKeh5ZawUzXg9KBqVROnFDLnhi6lXH9QdMUKHEC/s1600/Helga+Winter+%234.JPG",
     "bio": "Helga Winter is a woodturner and artist based in Port Townsend who creates turned wood pieces as well as sculptural works made from deconstructed books and wax.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Helga Winter - Woodturner",
     "categories": [
       "Studio",
       "Maker",
@@ -1415,7 +1399,8 @@
         "description": "A solo exhibition of Helga Winter's sculptural paintings made from deconstructed books, with an artwalk opening on November 8th."
       }
     ],
-    "title": "Woodturner"
+    "title": "Woodturner",
+    "name": "Helga Winter - Woodturner"
   },
   {
     "id": "the-colab",
@@ -1434,10 +1419,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "The CoLab was founded in 2011 by Heather Dudley-Nolette and Frank DePalma, who had a vision to to bring coworking to our rural community before coworking was a thing. Since its founding, The CoLab's has helped members connect through lasting business collaborations and friendships. ",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "The CoLab",
     "categories": [
       "Makerspace"
     ],
@@ -1448,48 +1431,13 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
-    "gallery_image_urls": [],
-    "previewable": true
-  },
-  {
-    "id": "the-nest",
-    "kind": "venue",
-    "town": "Port Townsend",
-    "neighborhood": "",
-    "address": "1119 Lawrence St, Port Townsend, WA 98368, USA",
-    "lat": 48.1166354,
-    "lng": -122.7618791,
-    "website": "http://www.owl360.org/",
-    "instagram": "",
-    "facebook": "",
-    "youtube": "",
-    "tiktok": "",
-    "etsy": "",
-    "shop_url": "",
-    "email": "",
-    "hero_image_url": "",
-    "bio": "",
-    "showOnSite": true,
-    "personName": "",
-    "businessName": "The Nest",
-    "categories": [
-      "Makerspace"
+    "hero_image_local": "gallery-image-02.jpg",
+    "local_images": [
+      "gallery-image-02.jpg"
     ],
-    "skills": [
-      "artisan"
-    ],
-    "bluesky": "",
-    "threads": "",
-    "twitter": "",
-    "pinterest": "",
-    "vimeo": "",
-    "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "The CoLab"
   },
   {
     "id": "bazaar-girls-yarn-shop",
@@ -1510,8 +1458,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Bazaar Girls Yarn Shop",
     "categories": [
       "Shop"
     ],
@@ -1528,7 +1474,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Bazaar Girls Yarn Shop"
   },
   {
     "id": "art-toolkit-adventure-art-supply",
@@ -1549,8 +1496,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Art Toolkit: Adventure Art Supply",
     "categories": [
       "Shop"
     ],
@@ -1567,7 +1512,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Art Toolkit: Adventure Art Supply"
   },
   {
     "id": "diva-yarn-trim",
@@ -1588,8 +1534,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Diva Yarn & Trim",
     "categories": [
       "Shop"
     ],
@@ -1606,7 +1550,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Diva Yarn & Trim"
   },
   {
     "id": "creative-union-fabrics",
@@ -1627,8 +1572,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Creative Union Fabrics",
     "categories": [
       "Shop"
     ],
@@ -1645,7 +1588,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Creative Union Fabrics"
   },
   {
     "id": "the-chandlery-by-naughty-faery-creations",
@@ -1666,8 +1610,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "The Chandlery, by Naughty Faery Creations",
     "categories": [
       "Shop"
     ],
@@ -1684,7 +1626,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "The Chandlery, by Naughty Faery Creations"
   },
   {
     "id": "district-fabric",
@@ -1705,8 +1648,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "District Fabric",
     "categories": [
       "Shop"
     ],
@@ -1722,7 +1663,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "District Fabric"
   },
   {
     "id": "millstream-port-townsend",
@@ -1743,8 +1685,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Millstream Port Townsend",
     "categories": [
       "Shop"
     ],
@@ -1760,7 +1700,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Millstream Port Townsend"
   },
   {
     "id": "come-sew",
@@ -1781,8 +1722,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Come Sew",
     "categories": [
       "Shop"
     ],
@@ -1798,7 +1737,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Come Sew"
   },
   {
     "id": "haiku-quilts",
@@ -1819,8 +1759,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "haiku quilts",
     "categories": [
       "Shop"
     ],
@@ -1836,7 +1774,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "haiku quilts"
   },
   {
     "id": "hansencrafts-llc",
@@ -1857,8 +1796,6 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "HansenCrafts LLC",
     "categories": [
       "Shop"
     ],
@@ -1875,7 +1812,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "HansenCrafts LLC"
   },
   {
     "id": "chimacum-valley-grainery",
@@ -1896,8 +1834,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/61e0b5f10a5ce256c46b4dc4/342cbac4-50e8-41a7-9bb3-2d7222e2c92a/DSC_9196.jpeg?format=2500w",
     "bio": "Chimacum Valley Grainery is a fifth-generation organic family farm, stone mill, wood-fired bakery, and craft micro-brewery in Chimacum, Washington, growing and milling heritage and landrace grains for flavor, nutrition, and climate resilience.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Chimacum Valley Grainery",
     "categories": [
       "Food & Drink",
       "Bakery"
@@ -1965,7 +1901,10 @@
         "description": "Organic spelt flour stone-milled from grain grown along the Elwha River region."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Chimacum Valley Grainery",
+    "sells_in_person": false,
+    "sells_online": true
   },
   {
     "id": "red-dog-farm",
@@ -1986,8 +1925,6 @@
     "hero_image_url": "https://reddogfarm.net/wp-content/uploads/2014/02/dog-bones.jpg",
     "bio": "Red Dog Farm is a certified organic farm located in Chimacum, Washington, cultivating more than 150 varieties of vegetables, berries, cut flowers, and plant starts across 23 acres in the fertile Center Valley.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Red Dog Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2056,7 +1993,8 @@
         "description": "A single-month CSA share for August deliveries of farm-fresh produce."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Red Dog Farm"
   },
   {
     "id": "port-townsend-farmers-market",
@@ -2077,10 +2015,8 @@
     "hero_image_url": "",
     "bio": "",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Port Townsend Farmers Market",
     "categories": [
-      "Farm"
+      "Shop"
     ],
     "skills": [
       "artisan",
@@ -2095,7 +2031,8 @@
     "hero_image_local": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Port Townsend Farmers Market"
   },
   {
     "id": "wilderbee-farm",
@@ -2116,8 +2053,6 @@
     "hero_image_url": "https://static.wixstatic.com/media/85d9f5_952f7e6ebac5417097fd97a1df3fec03~mv2.jpg/v1/fill/w_1003,h_514,al_c,q_85,enc_avif,quality_auto/85d9f5_952f7e6ebac5417097fd97a1df3fec03~mv2.jpg",
     "bio": "Wilderbee Farm is a family-run organic u-pick destination farm and meadery near Port Townsend, offering lavender, flowers, pumpkins, handcrafted meads, botanical distillation, and a ceramics studio on a twelve-acre property with nature trails and rare Soay sheep.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Wilderbee Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2165,7 +2100,8 @@
         "description": "An opening reception where visitors can meet the sketchers, hear stories, enjoy complimentary snacks, and sample mead."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Wilderbee Farm"
   },
   {
     "id": "raincoast-farms-raincoast-cellars-winery-cidery-llc",
@@ -2184,10 +2120,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Located close to Washington’s beautiful Victorian Seaport of Port Townsend, the grounds of our farm are a private magical escape. A stroll through the vineyard, orchard, flower garden and old growth cedar forest will instantly bring delight to your mind, body & soul.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Raincoast Farms, RainCoast Cellars, Winery & Cidery LLC",
     "categories": [
       "Food & Drink",
       "Winery",
@@ -2202,10 +2136,16 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "Farmglamshot.webp",
+    "local_images": [
+      "Farmglamshot.webp",
+      "IMG_0923.webp",
+      "Photo+Nov+03,+6+39+10+PM.webp",
+      "bees.webp"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Raincoast Farms"
   },
   {
     "id": "compass-rose-farms",
@@ -2224,12 +2164,11 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "This Land Is host and mother to many businesses and projects. Our gardens provide flowers, food, medicine and the magic for weddings and celebration. The Weavers Grove holds our spiritual center and sanctuary, a place to wander and connect to land and spirit. The Farm supports our flock of Icelandic sheep, Compass Rose Wool Mill and our many fledgling start ups.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Compass Rose Farms",
     "categories": [
-      "Farm"
+      "Farm",
+      "Venue"
     ],
     "skills": [
       "u-pick"
@@ -2240,10 +2179,16 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "crf3.png",
+    "local_images": [
+      "crf1.png",
+      "crf2.png",
+      "crf3.png"
+    ],
     "gallery_image_urls": [],
-    "previewable": true
+    "previewable": true,
+    "name": "Compass Rose Farms",
+    "sells_in_person": false
   },
   {
     "id": "far-reaches-farm",
@@ -2264,8 +2209,6 @@
     "hero_image_url": "https://farreachesfarm.com/cdn/shop/files/ss-1_9a736210-2aef-4029-9b63-b72741613569.jpg?v=1702584045&width=3840",
     "bio": "Far Reaches Farm is a specialty nursery based in Port Townsend, Washington, dedicated to sourcing and selling rare, unusual plants that are difficult to find at ordinary garden centers.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Far Reaches Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2323,7 +2266,8 @@
         "description": ""
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Far Reaches Farm"
   },
   {
     "id": "etta-s-farm",
@@ -2344,8 +2288,6 @@
     "hero_image_url": "https://static.wixstatic.com/media/0a54ab_a00b835a509f440c8a287cd57e2f1115~mv2.jpeg/v1/fill/w_1126,h_844,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4517.jpeg",
     "bio": "Etta's Farm is a neighborhood farm stand in Port Townsend, Washington, offering seasonally fresh-picked produce including vegetables, fruits, flowers, and honey.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Etta's Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2365,7 +2307,8 @@
       "https://static.wixstatic.com/media/0a54ab_75d3b228054d4852b9580cb3bb469a23~mv2.jpeg/v1/fill/w_492,h_468,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6772.jpeg"
     ],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Etta's Farm"
   },
   {
     "id": "fig-and-otter-farm",
@@ -2375,7 +2318,7 @@
     "address": "3057 7th St, Port Townsend, WA 98368, USA",
     "lat": 48.105933,
     "lng": -122.813625,
-    "website": "",
+    "website": "https://www.figandotterfarm.com/",
     "instagram": "",
     "facebook": "",
     "youtube": "",
@@ -2384,10 +2327,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Fig and Otter Farm grows about an acre of perennials and annuals on leased farmland between Port Townsend and Chimacum. We respectfully acknowledge that this is the unceded homeland of the Coast Salish tribes including the S’klallam and Chimakum Nations.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Fig and Otter Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2399,11 +2340,16 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "fao1.png",
+    "local_images": [
+      "fao1.png",
+      "fao2.png",
+      "fao3.png"
+    ],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Fig and Otter Farm"
   },
   {
     "id": "springrain-farm-and-orchards",
@@ -2413,19 +2359,17 @@
     "address": "187 Covington Wy, Chimacum, WA 98325, USA",
     "lat": 48.020812,
     "lng": -122.774491,
-    "website": "http://www.facebook.com/pages/Chimacum-WA/SpringRain-Farm-and-Orchards/38848909810?ref=ts#/pages/Chimacum-WA/SpringRain-Farm-and-Orchards/38848909810?v=wall&viewas=1589701307",
+    "website": "https://springrainfarm.org/",
     "instagram": "",
-    "facebook": "https://www.facebook.com/pages/Chimacum-WA/SpringRain-Farm-and-Orchards/38848909810",
+    "facebook": "",
     "youtube": "",
     "tiktok": "",
     "etsy": "",
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "SpringRain Farm & Orchard is a certified organic family farm located in the heart of Chimacum on 26 acres of prime agricultural land.  We grow a wide variety of berries, orchard tree fruits, perennial vegetables, greenhouse crops, salad greens, and also produce eggs, chicken, rabbit, and duck.  In addition, we produce value-added products such as farmstead jams & syrups, heirloom tomato sauce, applesauce, frozen blueberries, and various pestos.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "SpringRain Farm and Orchards",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2440,11 +2384,17 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "ducks.webp",
+    "local_images": [
+      "IMG_2395.webp",
+      "Spring+Rain+Farm+2016-21.webp",
+      "ducks.webp",
+      "image-asset.webp"
+    ],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "SpringRain Farm and Orchards"
   },
   {
     "id": "one-straw-ranch",
@@ -2465,8 +2415,6 @@
     "hero_image_url": "https://s3.amazonaws.com/grazecart/onestrawranch/images/1663010527_631f86df2d2fb.jpg",
     "bio": "One Straw Ranch is a family farm in Chimacum, WA that raises 100% grass-fed beef, pasture-raised pork, and eggs, delivering directly to customers in Jefferson County.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "One Straw Ranch",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2490,7 +2438,8 @@
       "https://s3.amazonaws.com/grazecart/onestrawranch/images/1594083774_5f03c9bec3d47.jpg"
     ],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "One Straw Ranch"
   },
   {
     "id": "shy-acre-farm",
@@ -2500,7 +2449,7 @@
     "address": "San Juan Avenue and, Discovery Rd, Port Townsend, WA 98368, USA",
     "lat": 48.120204199999996,
     "lng": -122.7792727,
-    "website": "",
+    "website": "https://www.shyacrefarm.com/",
     "instagram": "",
     "facebook": "",
     "youtube": "",
@@ -2509,10 +2458,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Shy Acre Farm works to build a self-reliant, sustainable community, with regular physical activity and positive social interaction.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Shy Acre Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2524,11 +2471,14 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "saf.png",
+    "local_images": [
+      "saf.png"
+    ],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Shy Acre Farm"
   },
   {
     "id": "stellar-j-farm",
@@ -2549,8 +2499,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/63d5ebf469c0c135edbf28b4/1675660218134-DL9F4PFEXG1PC131CZFS/Spring+CSA.jpg?format=2500w",
     "bio": "Stellar J Farm is a small community-supported agriculture operation that grows seasonal vegetables, berries, and eggs, offering weekly farmshare boxes and blueberry picking to local members.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Stellar J Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2589,7 +2537,8 @@
         "description": "Stellar J Farm appears weekly at the Port Townsend Farmers Market every Saturday from April through December."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Stellar J Farm"
   },
   {
     "id": "kodama-farm-food-forest",
@@ -2610,8 +2559,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/5c7ec97a4d546e132e38d065/90d78661-6a0a-4fa8-8fc7-e4b1abe5a7b5/20240628_091455.jpg",
     "bio": "Kodama Farm is a 45-acre regenerative operation in Chimacum, WA, using organic and no-till methods to grow fruits, vegetables, and goat milk products for the local community.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Kodama Farm & Food Forest",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2662,7 +2609,8 @@
         "description": ""
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Kodama Farm & Food Forest"
   },
   {
     "id": "gray-fox-farm",
@@ -2683,8 +2631,6 @@
     "hero_image_url": "https://images.squarespace-cdn.com/content/v1/642e6bbfc35fed1e5d27e363/6aff3b81-cb43-4d0d-8c0c-8e2e1780ae81/34601676_10216267394901255_6232067554462924800_n.jpg",
     "bio": "Gray Fox Farm, run by Laurae (a US Army Veteran and enrolled tribal member of the Confederated Tribes of Siletz Indians), is a 10-acre till-free operation in Chimacum, Washington offering blueberries, jams, honey, fermented foods, and traditional skills workshops.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Gray Fox Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2767,7 +2713,8 @@
         "description": "Weekend u-pick blueberry access during summer harvest season, available while supplies last."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Gray Fox Farm"
   },
   {
     "id": "solstice-family-farm",
@@ -2788,8 +2735,6 @@
     "hero_image_url": "https://static.wixstatic.com/media/84770f_4ff737b134a48a4bafe4db98047df9fc.jpg/v1/fill/w_427,h_600,al_t,q_80,enc_avif,quality_auto/84770f_4ff737b134a48a4bafe4db98047df9fc.jpg",
     "bio": "Solstice Family Farm is a sustainable family farm in Chimacum, Washington that raises animals and grows vegetables, and previously operated a Bed & Breakfast on the property.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Solstice Family Farm",
     "categories": [
       "Food & Drink",
       "Maker"
@@ -2805,7 +2750,8 @@
     "local_images": [],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Solstice Family Farm"
   },
   {
     "id": "chimacum-valley-dairy",
@@ -2815,7 +2761,7 @@
     "address": "3383 W Valley Rd, Chimacum, WA 98325, USA",
     "lat": 47.9694244,
     "lng": -122.78994349999999,
-    "website": "",
+    "website": "https://chimacumvalleydairy.com/",
     "instagram": "",
     "facebook": "",
     "youtube": "",
@@ -2824,10 +2770,8 @@
     "shop_url": "",
     "email": "",
     "hero_image_url": "",
-    "bio": "",
+    "bio": "Nestled in the Chimacum Valley on Washington's Olympic Peninsula, Chimacum Valley Dairy is a small farmstead creamery with a big passion for the craft. Owners Amy Rose and Bruce tend their herd of goats, source exceptional raw cow's milk from a neighboring farm, and turn it all into something extraordinary — one carefully made wheel at a time.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Chimacum Valley Dairy",
     "categories": [
       "Food & Drink",
       "Dairy"
@@ -2841,11 +2785,18 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "cvd3.webp",
+    "local_images": [
+      "cvd1.webp",
+      "cvd2.webp",
+      "cvd3.webp"
+    ],
     "gallery_image_urls": [],
     "previewable": true,
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Chimacum Valley Dairy",
+    "sells_in_person": false,
+    "sells_online": false
   },
   {
     "id": "elevated-ice-cream-co",
@@ -2866,8 +2817,6 @@
     "hero_image_url": "https://elevatedicecream.com/wp-content/uploads/Ultimate-Chocolate-Assortment-Box.jpg",
     "bio": "Elevated Ice Cream Co. is a Port Townsend institution operating since 1977, offering handcrafted small-batch ice cream, handmade chocolates, truffles, fudge, and nostalgic candies from their historic Water Street shop.",
     "showOnSite": true,
-    "personName": "",
-    "businessName": "Elevated Ice Cream Co",
     "categories": [
       "Food & Drink",
       "Ice Cream"
@@ -2881,8 +2830,10 @@
     "pinterest": "",
     "vimeo": "",
     "phone": "",
-    "hero_image_local": "",
-    "local_images": [],
+    "hero_image_local": "client-confections-and-ice-cream-22.jpg",
+    "local_images": [
+      "client-confections-and-ice-cream-22.jpg"
+    ],
     "gallery_image_urls": [
       "https://elevatedicecream.com/wp-content/uploads/Signature-Chocolate-Assortment-Box.jpg",
       "https://elevatedicecream.com/wp-content/uploads/White-Chocolate-Cashew-Caramel-Geoducks.jpg",
@@ -2934,12 +2885,11 @@
         "description": "Rich chocolate truffles featuring black currant and brandywine flavors."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Elevated Ice Cream Co"
   },
   {
     "id": "martin-wattenburger",
-    "personName": "Martin Wattenburger",
-    "businessName": "",
     "categories": [
       "Photography"
     ],
@@ -2976,12 +2926,11 @@
     "bio": "Martin Wattenburger is a fine art photographer who sells prints across a wide range of themes—from wildlife and botanicals to street scenes and digitally manipulated imagery—through his online studio.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Fine Art Photographer"
+    "title": "Fine Art Photographer",
+    "name": "Martin Wattenburger"
   },
   {
-    "id": "alanna-thomson-jurden",
-    "personName": "",
-    "businessName": "Nordland Tides",
+    "id": "nordland-tides",
     "categories": [
       "Woodwork"
     ],
@@ -3009,9 +2958,11 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "nt1.png",
     "hero_image_url": "https://nordlandtides.com/cdn/shop/files/Header_copy.jpg?v=1711256637&width=3840",
-    "local_images": [],
+    "local_images": [
+      "nt1.png"
+    ],
     "gallery_image_urls": [
       "https://nordlandtides.com/cdn/shop/files/Flower_Print_Earrings.jpg?v=1711253783&width=3840",
       "https://nordlandtides.com/cdn/shop/collections/CED5215D-0AA4-491E-9BC9-D10D0902070D.jpg?v=1721340603&width=1024",
@@ -3065,12 +3016,11 @@
         "description": "A curated gift set for Bigfoot enthusiasts featuring laser-engraved items."
       }
     ],
-    "title": "Laser Engraver"
+    "title": "Laser Engraver",
+    "name": "Nordland Tides"
   },
   {
     "id": "lotus-moon-market",
-    "personName": "",
-    "businessName": "Lotus Moon Market",
     "categories": [
       "Local Goods"
     ],
@@ -3105,12 +3055,11 @@
     ],
     "bio": "Lotus Moon Market is an online curated shop offering handmade, fair trade, and vintage goods sourced from artisans around the world, with a mission to support makers and promote sustainable shopping.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Lotus Moon Market"
   },
   {
     "id": "cascadia-chocolate-company",
-    "personName": "",
-    "businessName": "Cascadia Chocolate Company",
     "categories": [
       "Food & Drink",
       "Chocolate"
@@ -3207,12 +3156,11 @@
         "description": "A selection of biscotti available at The Nest from 8:30am to 5pm throughout the week."
       }
     ],
-    "title": "Food & Drink Maker"
+    "title": "Food & Drink Maker",
+    "name": "Cascadia Chocolate Company"
   },
   {
-    "id": "denise",
-    "personName": "",
-    "businessName": "Metal Dreamer",
+    "id": "metal-dreamer",
     "categories": [
       "Metalwork"
     ],
@@ -3237,18 +3185,22 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "md2.png",
     "hero_image_url": "https://scontent-sea5-1.cdninstagram.com/v/t51.2885-19/476760277_1144620483839018_4645396709205437114_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=108&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=4_qCWsjCeJMQ7kNvwG_6A00&_nc_oc=Adq9z0HFSOOpG0BmsZuZVyDuluIx0EWC2rloG1NSgeu5Y0LbV8uiJl_mAOq6hjIfPlA&_nc_zt=24&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_ss=7b689&oh=00_Af6pYvj6o_7anCs2KwQhe6rdtmn5-Cwqb28J4V-ueT_9Vg&oe=6A003118",
-    "local_images": [],
+    "local_images": [
+      "md1.png",
+      "md2.png",
+      "md3.png",
+      "md4.png"
+    ],
     "gallery_image_urls": [],
     "bio": "Denise Jenkins is a handcrafted jewelry maker based in Port Hadlock, Washington, creating meaningful, artisan pieces.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Metal Dreamer"
   },
   {
-    "id": "cindy-wortman-ziel",
-    "personName": "",
-    "businessName": "Fine Art Ornaments",
+    "id": "fine-art-ornaments",
     "categories": [
       "Mixed Media"
     ],
@@ -3273,18 +3225,22 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "fao2.png",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "fao1.png",
+      "fao2.png",
+      "fao3.png",
+      "fao4.png"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "Fine Art Ornaments are sure to please your loved ones, coworkers, and friends.\nCustom personalizations make them even more special!",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Fine Art Ornaments"
   },
   {
-    "id": "stryker-gooch",
-    "personName": "Stryker Gooch",
-    "businessName": "Stryker Forge",
+    "id": "stryker-forge",
     "categories": [
       "Maker",
       "Metalwork"
@@ -3398,12 +3354,11 @@
         "description": "A multi-day craft show celebrating locally handmade goods, unique creations, DIY inspiration, décor, and gifts from community makers."
       }
     ],
-    "title": "Blacksmith"
+    "title": "Blacksmith",
+    "name": "Stryker Forge"
   },
   {
     "id": "cole-askevold",
-    "personName": "Cole Askevold",
-    "businessName": "",
     "categories": [
       "Artist",
       "Mixed Media"
@@ -3444,16 +3399,18 @@
     "bio": "Cole Askevold is a visual artist whose portfolio showcases gallery and mixed-media works across multiple series, including wood-based pieces and conceptual art.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Mixed Media Artist"
+    "title": "Mixed Media Artist",
+    "name": "Cole Askevold"
   },
   {
     "id": "sarah-waldron",
-    "personName": "Sarah Waldron",
-    "businessName": "",
     "categories": [
       "Painting"
     ],
-    "skills": [],
+    "skills": [
+      "Oil",
+      "Sculpture"
+    ],
     "kind": "person",
     "town": "",
     "neighborhood": "",
@@ -3474,18 +3431,20 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "sw1.png",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "sw1.png",
+      "sw2.png"
+    ],
     "gallery_image_urls": [],
     "bio": "",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Sarah Waldron"
   },
   {
     "id": "quilting-in-the-fast-lane",
-    "personName": "",
-    "businessName": "Quilting in the Fast Lane",
     "categories": [
       "Fibre & Textile"
     ],
@@ -3512,19 +3471,20 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "qitfl1.png",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "qitfl1.png"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "The art of quilt making thru time lapse photography.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Quilter"
+    "title": "Quilter",
+    "name": "Quilting in the Fast Lane"
   },
   {
     "id": "drea-diprete-studio",
-    "personName": "Drea DiPrete Studio",
-    "businessName": "",
     "categories": [
       "Painting"
     ],
@@ -3583,12 +3543,11 @@
         "price": "from $36.00",
         "description": "A fine art print reproduction of the original mystical painting \"Easy Alchemy,\" available in three sizes with a hand-written artist signature."
       }
-    ]
+    ],
+    "name": "Drea DiPrete Studio"
   },
   {
     "id": "laura-hamje",
-    "personName": "Laura Hamje",
-    "businessName": "",
     "categories": [
       "Painting"
     ],
@@ -3619,12 +3578,11 @@
     "gallery_image_urls": [],
     "bio": "Laura Hamje is a painter based in the Seattle area who focuses on figurative and oil painting.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Laura Hamje"
   },
   {
     "id": "stephen-yates",
-    "personName": "Stephen Yates",
-    "businessName": "",
     "categories": [
       "Painting"
     ],
@@ -3658,12 +3616,11 @@
     ],
     "bio": "Stephen Yates is a visual artist who creates colorful paintings including abstract works, waterscapes, and landscapes, as well as public art and commissions.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Stephen Yates"
   },
   {
     "id": "underground-art",
-    "personName": "",
-    "businessName": "Underground Art",
     "categories": [
       "Mixed Media"
     ],
@@ -3743,12 +3700,11 @@
         "price": "$125.00",
         "description": "A mosaic stain glass bird artwork."
       }
-    ]
+    ],
+    "name": "Underground Art"
   },
   {
-    "id": "joseph-lavy",
-    "personName": "Joseph Lavy",
-    "businessName": "Port Townsend Tin Type",
+    "id": "port-townsend-tin-type",
     "categories": [
       "Photography",
       "Artist"
@@ -3776,34 +3732,37 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "pttt1.png",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "pttt1.png",
+      "pttt2.png",
+      "pttt3.png",
+      "pttt4.png"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "Joseph Lavy, tintype/ambrotype photographer in Port Townsend WA. Making physical media in an overwhelmingly digital world.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Wet Plate Photographer"
+    "title": "Wet Plate Photographer",
+    "name": "Port Townsend Tin Type"
   },
   {
     "id": "firefly-photography",
-    "personName": "",
-    "businessName": "Firefly Photography",
     "categories": [
-      "Photography",
-      "Artist"
+      "Photography"
     ],
     "skills": [
       "Photography"
     ],
-    "kind": "organization",
+    "kind": "person",
     "town": "",
     "neighborhood": "",
     "address": "",
     "lat": null,
     "lng": null,
     "website": "",
-    "instagram": "",
+    "instagram": "https://www.instagram.com/fireflyphotographypnw",
     "facebook": "https://www.facebook.com/Fireflyphotographypnw/",
     "youtube": "",
     "tiktok": "",
@@ -3816,19 +3775,23 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "fp2.jpg",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "fp1.jpg",
+      "fp2.jpg",
+      "fp3.jpg",
+      "fp4.jpg"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "My artisan eye for the feeling of an image, caught in the pause, is the essence of my photographs. I illuminate the moment. My photos are taken from an iPhone. The moment, the feeling, that’s where I resonate.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Photographer"
+    "title": "Photographer",
+    "name": "Firefly Photography"
   },
   {
     "id": "rick-gauthreaux",
-    "personName": "Rick Gauthreaux",
-    "businessName": "",
     "categories": [
       "Photography",
       "Artist"
@@ -3868,12 +3831,11 @@
     "bio": "Rick Gauthreaux is a photographer whose portfolio spans aviation imagery—including jets and propeller aircraft—as well as cityscapes, landscapes, wildlife mammals, and birds.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Photographer"
+    "title": "Photographer",
+    "name": "Rick Gauthreaux"
   },
   {
     "id": "heidi-gauthreaux",
-    "personName": "Heidi Gauthreaux",
-    "businessName": "",
     "categories": [
       "Photography",
       "Artist"
@@ -3913,12 +3875,11 @@
     "bio": "Heidi Gauthreaux is an award-winning photographer specializing in wildlife, macro, and nature subjects including birds, horses, insects, and mammals.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Photographer"
+    "title": "Photographer",
+    "name": "Heidi Gauthreaux"
   },
   {
     "id": "kris-carroll",
-    "personName": "Kris Carroll",
-    "businessName": "",
     "categories": [
       "Photography",
       "Artist"
@@ -3997,18 +3958,17 @@
         "description": "A dramatic coastal print showing where the Pacific Ocean converges with the Straits of Juan de Fuca at Cape Flattery."
       }
     ],
-    "title": "Photographer"
+    "title": "Photographer",
+    "name": "Kris Carroll"
   },
   {
     "id": "rachel-clark",
-    "personName": "Rachel Clark",
-    "businessName": "",
     "categories": [
-      "Writing",
-      "Artist"
+      "Writing"
     ],
     "skills": [
-      "Writing"
+      "Writing",
+      "Biology"
     ],
     "kind": "person",
     "town": "",
@@ -4041,17 +4001,17 @@
     "bio": "Rachel Clark is a biologist, science writer, and author whose work centers on the deep connections between humans, whales, and the natural world, most notably through her book The Blackfish Prophecy.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Writer"
+    "title": "Writer",
+    "name": "Rachel Clark"
   },
   {
     "id": "mary-purdy",
-    "personName": "Mary Purdy",
-    "businessName": "",
     "categories": [
       "Facilitator"
     ],
     "skills": [
-      "Dance"
+      "Dance",
+      "Writer"
     ],
     "kind": "organization",
     "town": "",
@@ -4077,17 +4037,17 @@
     "hero_image_url": "",
     "local_images": [],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "I am an Eco-Dietitian, Educator and Nutrition and Sustainability Advisor who is bringing my passion for jazzy/funky/hip-hop-esque dancing to Port Townsend, WA. I have  been embracing “Dance Club” moves for close to a decade and have studied dance at Westlake Dance Center and Exit Space Dance Studio in Seattle, and studied privately with Jason Umbao. My first career was in the theater which included performances in shows like Cabaret, Little Shop of Horrors.  I don’t pretend to be any kind of advanced professional dancer but I do love dancing and dancing with others.  I bring a high energy, but low key, low pressure and supportive vibe to my classes where everyone, (including me!), is invited to be themselves and shake it like they mean it.",
     "previewable": true,
     "showOnSite": true,
-    "title": "Dancer"
+    "title": "Dancer",
+    "name": "Mary Purdy"
   },
   {
     "id": "feral-fine-arts",
-    "personName": "",
-    "businessName": "Feral Fine Arts",
     "categories": [
-      "Facilitator"
+      "Facilitator",
+      "Maker"
     ],
     "skills": [],
     "kind": "organization",
@@ -4110,18 +4070,22 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "ffa2.png",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "ffa1.png",
+      "ffa2.png",
+      "ffa3.png",
+      "ffa4.png"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "Feral Fine Arts began with one person’s journey to rediscover the wild within themself. While backpacking for a year throughout New Zealand, Myco rediscovered one of their most important senses. The sense of touch. As they felt their way back into their wild ways, they studied weaving with plants, animal fibers, felting, and spinning. This affirmed their lifelong fervent pursuit of all things fiber arts. They sold their work abroad and began teaching fiber arts to all ages.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Feral Fine Arts"
   },
   {
     "id": "art-farmers-of-port-townsend",
-    "personName": "",
-    "businessName": "Art Farmers of Port Townsend",
     "categories": [
       "Gallery"
     ],
@@ -4146,18 +4110,19 @@
     "shop_url": "",
     "email": "",
     "phone": "",
-    "hero_image_local": "",
+    "hero_image_local": "5805630_original-1.jpg",
     "hero_image_url": "",
-    "local_images": [],
+    "local_images": [
+      "5805630_original-1.jpg"
+    ],
     "gallery_image_urls": [],
-    "bio": "",
+    "bio": "the art farm gallery proudly supports our local artists and makers by providing alternative venues for showing, selling and sharing their work with the community. if you are interested in purchasing any work featured here, or just need more information, please contact the artist directly. 100% of all proceeds from the sale of work shown here goes directly to the artist.",
     "previewable": true,
-    "showOnSite": true
+    "showOnSite": true,
+    "name": "Art Farmers of Port Townsend"
   },
   {
     "id": "inked-by-eazy",
-    "personName": "",
-    "businessName": "Inked by Eazy",
     "categories": [
       "Tattoo",
       "Artist"
@@ -4183,13 +4148,359 @@
     "shop_url": "",
     "email": "",
     "phone": "",
+    "hero_image_local": "ibe1.png",
+    "hero_image_url": "",
+    "local_images": [
+      "ibe.jpg",
+      "ibe1.png",
+      "ibe2.png",
+      "ibe3.png",
+      "ibe4.png"
+    ],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true,
+    "title": "Tattoo Artist",
+    "name": "Inked by Eazy"
+  },
+  {
+    "id": "raw-art-collective",
+    "name": "Raw Art Collective",
+    "categories": [
+      "Studio"
+    ],
+    "skills": [
+      "Events",
+      "Classes"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "https://www.rawartcollective.org/",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
     "hero_image_local": "",
     "hero_image_url": "",
     "local_images": [],
     "gallery_image_urls": [],
     "bio": "",
     "previewable": true,
-    "showOnSite": true,
-    "title": "Tattoo Artist"
+    "showOnSite": true
+  },
+  {
+    "id": "andrew-shelton",
+    "name": "Andrew Shelton",
+    "categories": [
+      "Artist"
+    ],
+    "skills": [
+      "Acrylics"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "https://paintingsbyandrew.com/",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "dew-drops-apothecary",
+    "name": "Dew Drops Apothecary",
+    "categories": [
+      "Maker"
+    ],
+    "skills": [
+      "Soaps"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "",
+    "instagram": "https://www.instagram.com/dewdropsapothecary745/",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "pt-community-printshop",
+    "name": "PT Community Printshop",
+    "categories": [
+      "Studio"
+    ],
+    "skills": [
+      "Printing",
+      "Darkroom"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "https://www.ptcommunityprintshop.org/",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "the-turret-journal",
+    "name": "The Turret Journal",
+    "categories": [
+      "Writing"
+    ],
+    "skills": [],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "https://turretjournal.adamspraggehouse.com/",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "7819dc6b-3f2f-459b-9f04-83533cf1dfea_1800x1013.webp",
+    "hero_image_url": "",
+    "local_images": [
+      "7819dc6b-3f2f-459b-9f04-83533cf1dfea_1800x1013.webp"
+    ],
+    "gallery_image_urls": [],
+    "bio": "The Turret Journal is written by Zhenya Lavy from the Adams Pragge House, 1028 Tyler Street, Port Townsend, Washington. This journal attends to the continuing life of this house — not only its structure and materials, but also its light and lived experience across seasons — as well as its place within Port Townsend and at the northeastern tip of the Olympic Peninsula. It is also an act of recovery — of the people who lived here, loved here, and shaped the civic, cultural, and national life of their time, and whose connection to this house has been largely forgotten.",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "elizabeth-comstock",
+    "name": "Elizabeth Comstock",
+    "categories": [
+      "Artist",
+      "Painting"
+    ],
+    "skills": [
+      "Abstract",
+      "Oil",
+      "Weaving",
+      "Print"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "ec2.JPG",
+    "hero_image_url": "",
+    "local_images": [
+      "ec1.JPG",
+      "ec2.JPG"
+    ],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "jan-sara-jorgensen",
+    "name": "Jan Sara Jorgensen",
+    "categories": [
+      "Facilitator"
+    ],
+    "skills": [],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "https://www.soundandlighthealingarts.com/",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "jill-kevin",
+    "name": "Jill & Kevin",
+    "categories": [
+      "Music"
+    ],
+    "skills": [],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "",
+    "instagram": "",
+    "facebook": "https://www.facebook.com/profile.php?id=100063680497854",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
+  },
+  {
+    "id": "julia-ross",
+    "name": "Julia Ross",
+    "categories": [
+      "Artist"
+    ],
+    "skills": [
+      "Ceramics",
+      "Collage"
+    ],
+    "kind": "person",
+    "town": "",
+    "neighborhood": "",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "website": "",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "bluesky": "",
+    "threads": "",
+    "twitter": "",
+    "pinterest": "",
+    "vimeo": "",
+    "etsy": "",
+    "shop_url": "",
+    "email": "",
+    "phone": "",
+    "hero_image_local": "",
+    "hero_image_url": "",
+    "local_images": [],
+    "gallery_image_urls": [],
+    "bio": "",
+    "previewable": true,
+    "showOnSite": true
   }
 ]

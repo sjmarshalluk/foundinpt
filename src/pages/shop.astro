@@ -47,10 +47,10 @@ const shopMarkers = inPersonShops
 
   {products.length > 0 && (
     <section class="space-section" data-section="products">
-      <h2 class="section-heading">Products</h2>
+      <h2 class="section-heading">Featured products</h2>
       <div class="shop-products-grid">
         {products.map(({ product, entity }) => {
-          const search = `${product.title || ''} ${entity.businessName || ''} ${entity.personName || ''} ${(entity.skills || []).join(' ')}`.toLowerCase();
+          const search = `${product.title || ''} ${entity.name || ''} ${(entity.skills || []).join(' ')}`.toLowerCase();
           return (
             <div class="shop-product-card" data-search={search} data-section="products">
               <a href={product.product_url} target="_blank" rel="noopener" class="product-link">
@@ -89,12 +89,12 @@ const shopMarkers = inPersonShops
   </section>
 
   {onlineMakers.length > 0 && (
-    <section class="space-section online-makers-tint" data-section="online">
-      <h2 class="section-heading">Shop direct from makers</h2>
+    <section class="space-section" data-section="online">
+      <h2 class="section-heading">Buy online direct from makers</h2>
       <div class="maker-list">
         {onlineMakers.map((e) => {
-          const hero = heroImageSrc(e);
-          const search = `${e.personName || ''} ${e.businessName || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          const hero = heroImageSrc(e, 'shop');
+          const search = `${e.name || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
           return (
             <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="online">
               <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>
@@ -112,12 +112,12 @@ const shopMarkers = inPersonShops
 
   {inPersonShops.length > 0 && (
     <section class="space-section" data-section="in-person">
-      <h2 class="section-heading">Browse local shops</h2>
+      <h2 class="section-heading">Find local shops to visit</h2>
       <div id="local-shops-map" class="local-shops-map"></div>
       <div class="maker-list">
         {inPersonShops.map((e) => {
-          const hero = heroImageSrc(e);
-          const search = `${e.personName || ''} ${e.businessName || ''} ${e.neighborhood || ''} ${e.town || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
+          const hero = heroImageSrc(e, 'shop');
+          const search = `${e.name || ''} ${e.neighborhood || ''} ${e.town || ''} ${(e.skills || []).join(' ')}`.toLowerCase();
           return (
             <a href={`/entity/${e.id}/`} class="maker-list-row" data-search={search} data-section="in-person" data-id={e.id}>
               <div class="maker-list-thumb" style={hero ? `background-image:url(${hero});` : `background:${hashColor(e.id)};`} ></div>

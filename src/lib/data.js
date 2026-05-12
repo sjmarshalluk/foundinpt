@@ -154,16 +154,20 @@ export function isLocalGoods(entity) {
 }
 
 // True if entity has any online-buyable surface (products, or a shop URL).
+// Explicit `sells_online: true|false` always wins; otherwise derive from data.
 export function sellsOnline(entity) {
+  if (entity?.sells_online === true) return true;
+  if (entity?.sells_online === false) return false;
   return Boolean(entity?.products?.length) || Boolean(entity?.shop_url);
 }
 
-// True if entity is a physical place where you can walk in and buy. Requires
-// an `address` (so it's actually visitable) plus a retail-implying category.
-// Set `entity.sells_in_person: false` to opt-out (e.g. galleries that don't sell).
+// True if entity is a physical place where you can walk in and buy.
+// Explicit `sells_in_person: true|false` always wins; otherwise the default
+// rule requires an `address` plus a retail-implying category.
 export function sellsInPerson(entity) {
+  if (entity?.sells_in_person === true) return true;
+  if (entity?.sells_in_person === false) return false;
   if (!entity?.address) return false;
-  if (entity.sells_in_person === false) return false;
   return (entity.categories || []).some((c) => IN_PERSON_RETAIL_CATEGORIES.has(c));
 }
 
@@ -324,20 +328,49 @@ export function hashColor(s) {
 
 export function displayName(entity) {
   if (!entity) return '';
-  if (entity.personName && entity.businessName) return `${entity.personName} (${entity.businessName})`;
-  return entity.personName || entity.businessName || '(unnamed)';
+  return entity.name || '(unnamed)';
 }
 
 export function shortName(entity) {
-  // Tighter version for cards — drop the alias parens.
   if (!entity) return '';
-  return entity.personName || entity.businessName || '(unnamed)';
+  return entity.name || '(unnamed)';
+}
+
+// Image-tag context vocabulary. Listing pages pass one of these as the
+// `context` arg to heroImageSrc / gallerySrcs to surface role-specific images
+// on multi-role entities. Tags are stored in entity.image_tags as a map keyed
+// by local filename or remote URL.
+export const IMAGE_CONTEXTS = ['artist', 'maker', 'farm', 'gallery', 'shop', 'studio', 'venue', 'facilitator'];
+
+function imageHasContext(entity, key, context) {
+  if (!context) return false;
+  const tags = entity?.image_tags?.[key];
+  return Array.isArray(tags) && tags.includes(context);
+}
+
+// Returns [{ src, key }] for the context — local files first, then remote
+// URLs. If no images are tagged for this context (or no context given),
+// returns null so callers can fall back to the global default behavior.
+function contextImages(entity, context) {
+  if (!entity || !context || !entity.image_tags) return null;
+  const out = [];
+  for (const f of (entity.local_images || [])) {
+    if (imageHasContext(entity, f, context)) out.push({ src: `/images/${entity.id}/${f}`, key: f });
+  }
+  for (const u of (entity.gallery_image_urls || [])) {
+    if (imageHasContext(entity, u, context)) out.push({ src: u, key: u });
+  }
+  return out.length ? out : null;
 }
 
 // Resolves the image src — prefer locally hosted, fall back to remote URL.
-// Returns null if neither.
-export function heroImageSrc(entity) {
+// When `context` is given and any image is tagged with that context, prefer
+// the first such image; otherwise fall back to the global hero. Returns null
+// if no image exists.
+export function heroImageSrc(entity, context) {
   if (!entity) return null;
+  const ctxList = contextImages(entity, context);
+  if (ctxList && ctxList.length) return ctxList[0].src;
   if (entity.hero_image_local) return `/images/${entity.id}/${entity.hero_image_local}`;
   return entity.hero_image_url || null;
 }
@@ -350,15 +383,25 @@ export function localGallerySrcs(entity) {
 // Combined gallery: local images first (best quality), then remote gallery URLs
 // from enrichment (hot-linked from artist's own site). De-duped and excludes
 // whatever's already the hero.
-export function gallerySrcs(entity) {
+// When `context` is given and any image is tagged with that context, returns
+// only the context-tagged images (still local-first, deduped, hero-excluded).
+// If no images match the context, falls back to today's behavior.
+export function gallerySrcs(entity, context) {
   if (!entity) return [];
-  const hero = heroImageSrc(entity);
-  const local = localGallerySrcs(entity);
-  const remote = Array.isArray(entity.gallery_image_urls) ? entity.gallery_image_urls : [];
+  const hero = heroImageSrc(entity, context);
+  const ctxList = contextImages(entity, context);
+  let candidates;
+  if (ctxList && ctxList.length) {
+    candidates = ctxList.map((c) => c.src);
+  } else {
+    const local = localGallerySrcs(entity);
+    const remote = Array.isArray(entity.gallery_image_urls) ? entity.gallery_image_urls : [];
+    candidates = [...local, ...remote];
+  }
   const seen = new Set();
   if (hero) seen.add(hero);
   const out = [];
-  for (const u of [...local, ...remote]) {
+  for (const u of candidates) {
     if (!u || seen.has(u)) continue;
     seen.add(u);
     out.push(u);
