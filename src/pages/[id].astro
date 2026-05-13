@@ -1,11 +1,11 @@
 ---
-import Site from '../../layouts/Site.astro';
+import Site from '../layouts/Site.astro';
 import {
   entities, displayName, shortName, primaryTag,
   heroImageSrc, gallerySrcs, externalLinks, hashColor,
   resolveCtaButtons, relatedEntities,
   isFarm, isMaker, isArtist, isStudio, isEvent, isSpace, isLocalGoods, isSupply,
-} from '../../lib/data.js';
+} from '../lib/data.js';
 
 export async function getStaticPaths() {
   return entities.map((e) => ({
@@ -194,7 +194,7 @@ const home = entityHome(entity);
           {related.map((r) => {
             const rhero = heroImageSrc(r);
             return (
-              <a href={`/entity/${r.id}/`} class="related-card">
+              <a href={`/${r.id}/`} class="related-card">
                 <div class="related-thumb" style={rhero ? `background-image:url(${rhero});background-size:cover;background-position:center;` : `background:${hashColor(r.id)};`} ></div>
                 <div class="related-info">
                   <span class="related-name">{shortName(r)}</span>

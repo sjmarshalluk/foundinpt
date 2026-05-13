@@ -32,7 +32,7 @@ function locLabel(e) {
 // not our internal entity page. Fall back to the entity page if nothing
 // external is on file.
 function entityShopUrl(e) {
-  return e.shop_url || e.website || `/entity/${e.id}/`;
+  return e.shop_url || e.website || `/${e.id}/`;
 }
 const isExternal = (url) => /^https?:/i.test(url || '');
 
@@ -218,7 +218,7 @@ const shopMarkers = inPersonShops
       for (const m of shopMarkers) {
         const marker = L.marker([m.lat, m.lng]).addTo(map);
         marker.bindPopup(
-          '<strong><a href="/entity/' + m.id + '/">' + m.name + '</a></strong>' +
+          '<strong><a href="/' + m.id + '/">' + m.name + '</a></strong>' +
           (m.tag ? '<br/><span style="color:#555;font-size:0.85rem">' + m.tag + '</span>' : '')
         );
         bounds.push([m.lat, m.lng]);

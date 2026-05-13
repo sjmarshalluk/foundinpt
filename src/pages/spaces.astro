@@ -31,7 +31,7 @@ for (const e of list) byKey[spaceSection(e)].entries.push(e);
           const skills = (e.skills || []).join(' ');
           const search = `${e.name || ''} ${skills}`.toLowerCase();
           return (
-            <a href={`/entity/${e.id}/`} class="maker-card" data-search={search} data-section={s.key}>
+            <a href={`/${e.id}/`} class="maker-card" data-search={search} data-section={s.key}>
               <div class="maker-thumb" style={hero ? `background-image:url(${hero});background-size:cover;background-position:center;` : `background:${hashColor(e.id)};`} ></div>
               <div class="maker-info">
                 <span class="maker-name">{shortName(e)}</span>
