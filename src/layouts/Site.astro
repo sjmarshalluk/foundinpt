@@ -1,5 +1,5 @@
 ---
-const { title = 'Found in PT', description = "A directory of artists, makers, and crafters in and around Port Townsend." } = Astro.props;
+const { title = 'Made in PT', description = "A directory of artists, makers, and crafters in and around Port Townsend." } = Astro.props;
 import '../styles/style.css';
 const path = Astro.url.pathname;
 const hasHeroBg = path === '/about' || path === '/about/';
@@ -17,11 +17,24 @@ const currentYear = new Date().getFullYear();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HCE0YN01CB"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HCE0YN01CB');
+  </script>
+
   <slot name="head" />
 </head>
 <body class={hasHeroBg ? 'is-home' : ''}>
+  <div class="construction-banner" role="status">
+    <p>Under construction &mdash; we'll be adding more every week.</p>
+  </div>
   <header>
-    <a href="/" class="logo-text" aria-label="Found in PT"><img src="/logo.svg" alt="Found in PT" /></a>
+    <a href="/" class="logo-text" aria-label="Made in PT"><img src="/logo.svg" alt="Made in PT" /></a>
     <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
@@ -36,13 +49,13 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="nav-section nav-section-utility">
         <a href="/shop" aria-current={isActive('/shop') ? 'page' : undefined}>Shop</a>
-        <a href="https://www.facebook.com/profile.php?id=61588945546441" target="_blank" rel="noopener" aria-label="Facebook" class="nav-icon">
+        <a href="https://www.facebook.com/profile.php?id=61589567286184" target="_blank" rel="noopener" aria-label="Facebook" class="nav-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
           <span class="nav-icon-label">Facebook</span>
         </a>
-        <a href="https://instagram.com/foundinpt" target="_blank" rel="noopener" aria-label="Instagram" class="nav-icon">
+        <a href="https://www.instagram.com/_madeinpt" target="_blank" rel="noopener" aria-label="Instagram" class="nav-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -61,8 +74,8 @@ const currentYear = new Date().getFullYear();
   <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="footer-col footer-brand">
-        <a href="/" class="footer-logo" aria-label="Found in PT — home">
-          <img src="/logo.svg" alt="Found in PT" />
+        <a href="/" class="footer-logo" aria-label="Made in PT — home">
+          <img src="/logo.svg" alt="Made in PT" />
         </a>
         <p class="footer-tagline">A curated directory of artists, makers, and crafters in and around Port Townsend, WA.</p>
       </div>
@@ -90,14 +103,14 @@ const currentYear = new Date().getFullYear();
         <h3 class="footer-heading">Get involved</h3>
         <ul class="footer-links">
           <li><a href="/register">Apply to be listed</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61588945546441" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://instagram.com/foundinpt" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61589567286184" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/_madeinpt" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="site-footer-bottom">
-      <p class="footer-copyright">&copy; {currentYear} Found in PT &middot; Port Townsend, WA</p>
+      <p class="footer-copyright">&copy; {currentYear} Made in PT &middot; Port Townsend, WA</p>
     </div>
   </footer>
 

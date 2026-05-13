@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Found in PT — directory site for Port Townsend artists, makers, and crafters.",
+  "description": "Made in PT — directory site for Port Townsend artists, makers, and crafters.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

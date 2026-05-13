@@ -21,6 +21,16 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* ── Construction banner ── */
+.construction-banner {
+  background: #1a1a1a;
+  padding: 10px var(--pad);
+  font-size: 0.85rem;
+  color: #e8e8e8;
+  text-align: center;
+}
+.construction-banner p { margin: 0; }
+
 /* ── Header ── */
 header {
   padding: 28px var(--pad);
@@ -36,7 +46,7 @@ header {
 }
 .logo-text img {
   display: block;
-  height: 44px;
+  height: 36px;
   width: auto;
 }
 
